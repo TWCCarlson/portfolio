@@ -7,57 +7,127 @@
     <link rel="stylesheet" type="text/css" href="./styles/style.css">
 </head>
 <body class="body">
-    <resume-header-name></resume-header-name>
+    <resume-header-name myname="Thomas W. C. Carlson"></resume-header-name>
     <resume-header-contact-bar>
-        <resume-header-contact-item contact-url="mailto:me@me.com" contact-text="<strong>email@gmail.com</strong>"></resume-header-contact-item>
+        <resume-header-contact-item 
+            contact-url="mailto:thomaswccarlson@gmail.com" 
+            contact-text="<strong>thomaswccarlson@gmail.com</strong>">
+        </resume-header-contact-item>
         <resume-header-contact-item contact-text="|"></resume-header-contact-item>
-        <resume-header-contact-item contact-text="123-456-7890"></resume-header-contact-item>
+        <resume-header-contact-item 
+            contact-url="tel:+19162549358" 
+            contact-text="(916) 254-9358">
+        </resume-header-contact-item>
         <resume-header-contact-item contact-text="|"></resume-header-contact-item>
-        <resume-header-contact-item contact-text="github.com"></resume-header-contact-item>
+        <resume-header-contact-item 
+            contact-url="https://github.com/TWCCarlson" 
+            contact-text="github.com/TWCCarlson">
+        </resume-header-contact-item>
     </resume-header-contact-bar>
     <resume-section section-text="Education">
         <resume-subsection
-            left-text="<strong>Company</strong>, role"
-            right-text="Dates">
-            <resume-line 
-                left-text="<strong>Company</strong>, role"
-                center-text="Optional Descriptive text"
-                right-text="Dates">
-                <resume-line-detail
-                    detail-text="sample detail text"
-                    video-url="https://www.youtube.com/watch?v=Zsz5QhzACJs"
-                    article-url="projects/article.html">
-                </resume-line-detail>
-            </resume-line>
-            <resume-line 
-                left-text="<strong>Company</strong>, role"
-                center-text="Optional Descriptive text"
-                right-text="Dates">
-                <resume-line-detail></resume-line-detail>
-            </resume-line>
-            <resume-line 
-                left-text="<strong>Company</strong>, role"
-                center-text="Optional Descriptive text"
-                right-text="Dates">
-            </resume-line>
+            left-text="<strong>CSU Sacramento</strong> — MS Mechanical Engineering, GPA 4.0/4.0, Controls and Robotics Focus"
+            right-text="Jan 2024">
+        </resume-subsection>
+        <resume-subsection
+            left-text="<strong>CSU Sacramento</strong> — BS Mechanical Engineering, GPA 3.5/4.0"
+            right-text="May 2020">
         </resume-subsection>
     </resume-section>
     <resume-section section-text="Experience">
         <resume-subsection
-            left-text="<strong>Company</strong>, role"
-            right-text="Dates">
-            <resume-line line-text="bullet point desc.">
-                <resume-line-detail
-                    detail-text="it sucked man tbh"
-                    video-url="https://www.youtube.com/watch?v=t-yCg-0-baE"
-                    article-url="projects/article.html">
-                </resume-line-detail>
+            left-text="<strong>CSU Sacramento Industrial Robotics Lab</strong>, Lab Development & Lecturer"
+            right-text="Aug 2021 — May 2022">
+            <resume-line 
+                indent-depth="1"
+                line-text="Installed and tested Kuka, Nachi, Beckhoff, and Cognex equipment in CSU Sacramento’s new robotics lab">
+            </resume-line>
+            <resume-line
+                indent-depth="1"
+                line-text="Lectured and managed a safe lab space, guiding groups of up to 15 students at a time">
+            </resume-line>
+            <resume-line
+                indent-depth="2"
+                line-text="Performing pick-and-place operations with Nachi and Kuka 6-axis robot arms">
+            </resume-line>
+            <resume-line
+                indent-depth="2"
+                line-text="Automating factory operations using Beckhoff PLC hardware and Structured Text code">
+            </resume-line>
+            <resume-line
+                indent-depth="2"
+                line-text="Inspecting part quality using machine vision with Cognex cameras and In-Sight software tools">
             </resume-line>
         </resume-subsection>
     </resume-section>
     <resume-section section-text="Projects">
+        <resume-subsection tag="LPG"
+            left-text="<strong>Rocket Engine Software and Control Team Lead</strong>, Liquid Propulsion Group at CSUS">
+            <resume-line
+                indent-depth="1"
+                line-text="Led a team of 4 student engineers in design, assembly, and testing of the control hardware and software for a 560lbf thrust bipropellant rocket engine, culminating in a fault-free hot fire and engine validation">
+            </resume-line>
+            <resume-line
+                indent-depth="1"
+                line-text="Managed team resources and talent using Kanban boards, building a team knowledge Wiki, managing part inventory, coordinating test logistics, and leading frequent design meetings and work sessions">
+            </resume-line>
+            <resume-line
+                indent-depth="1"
+                line-text="Collected data from 12 sensors and controlled 7 valves using embedded C++ code on Arduino controllers managed by a Raspberry Pi onboard computer, all operated via a RESTful API from a safe operating distance">
+            </resume-line>
+            <resume-line
+                indent-depth="1"
+                line-text="Captured, stored, exported, and analyzed all testing data used in engine performance iteration and validation using serial communications, a Python-Redis database, and Excel statistical tools">
+            </resume-line>
+            <resume-line
+                indent-depth="1"
+                line-text="Increased the rate of testing and iteration by developing a React UI with Plotly graphs to visualize live data">
+            </resume-line>
+            <resume-line
+                indent-depth="1"
+                line-text="Eliminated dangerous manual control modes of the engine by creating a MATLAB UI to automate commands">
+            </resume-line>
+            <resume-line
+                indent-depth="1"
+                line-text="Prevented at least two modes of failure that arose during transport and setup of the test stand by writing thorough documentation, stand setup procedures, Docker containers, and hardware continuity checks">
+            </resume-line>
+        </resume-subsection>
+        <resume-subsection tag="FleetBench"
+            left-text="<strong>FleetBench</strong>, Multi-Agent Simulation Application">
+            <resume-line
+                indent-depth="1"
+                line-text="Augmented researcher efforts in multi-robot pathfinding by building a Python desktop application with dynamic UIs, algorithm documentation, statistical evaluation, and built-in algorithm extensibility">
+            </resume-line>
+            <resume-line
+                indent-depth="1"
+                line-text="Implemented and simulated pathfinding algorithms (Dijkstra, Token Passing, and Windowed Hierarchical A*)">
+            </resume-line>
+            <resume-line
+                indent-depth="1"
+                line-text="Visualized complex system behaviors using a custom graphics API which managed Tkinter UI elements">
+            </resume-line>
+        </resume-subsection>
+        <resume-subsection tag="OSRSWiki"
+            left-text="<strong>Cartographer Project</strong>, OSRS Wiki Map Tool Contribution">
+            <resume-line
+                indent-depth="1"
+                line-text="Enabled the automation of weekly updates to the Wiki’s Leaflet map image data set and reduced processing time requirements by 54% by overhauling the image processing strategy to use the Pyvips library">
+            </resume-line>
+            <resume-line
+                indent-depth="1"
+                line-text="Restored lost functionality by modernizing obsolete user data, re-enabling Wiki users to create custom maps">
+            </resume-line>
+        </resume-subsection>
     </resume-section>
     <resume-section section-text="Skills">
+        <resume-line
+            indent-depth="0"
+            line-text="<strong>Programming</strong> — Python, MATLAB, C++, JavaScript, Tkinter, React">
+        </resume-line>
+        <resume-line
+            indent-depth="0"
+            line-text="<strong>Software</strong> — Git, GitHub CI/CD, Docker, Simulink, SolidWorks CSWA, Cognex In-Sight, TwinCAT 3, EasyEDA">
+        </resume-line>
     </resume-section>
     <script type="module" src="./elements/resume-section.js"></script>
     <script type="module" src="./elements/resume-subsection.js"></script>
