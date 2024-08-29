@@ -10,11 +10,12 @@
     overflow: visible;
     display: flex;
     justify-content: left;
-    gap: 10px;
+    overflow-wrap: normal;
 }
 
 .resume-line-bullet {
-    width: 0.15in; /* Bullet point spacing */
+    position: relative;
+    flex-shrink: 0;
 }
 
 .resume-line-expanded {

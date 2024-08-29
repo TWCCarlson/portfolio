@@ -34,13 +34,25 @@ class ResumeLine extends HTMLElement {
     }
 
     connectedCallback() {
-        // this.trigger.textContent = this.getAttribute('line-text') || this.trigger.defaultContent;
-        const lineBullet = document.createElement('div');
-        lineBullet.setAttribute('class', 'resume-line-bullet');
-        lineBullet.textContent = "•";
-        this.trigger.appendChild(lineBullet)
+        const bulletDepth = this.getAttribute('indent-depth');
+        const depthCharMap = {
+            "0": ["", "0in", "0in"],
+            "1": ["•", "0.2in", "0in"],
+            "2": ["o", "0.20in", "0.20in"]
+        }
+        // Only make the bullet point element if it should exist (not 0-indent)
+        if (depthCharMap[bulletDepth][1]!='0in') {
+            const lineBullet = document.createElement('div');
+            lineBullet.setAttribute('class', 'resume-line-bullet');
+            lineBullet.innerHTML = depthCharMap[bulletDepth][0];
+            lineBullet.style.width = depthCharMap[bulletDepth][1];
+            lineBullet.style.marginLeft = depthCharMap[bulletDepth][2];
+            this.trigger.appendChild(lineBullet)
+        }
+
+        // Create the line text
         this.lineText = document.createElement('div');
-        this.lineText.textContent = this.getAttribute('line-text') || this.trigger.defaultContent; 
+        this.lineText.innerHTML = this.getAttribute('line-text') || this.trigger.defaultContent;
         this.trigger.appendChild(this.lineText);
 
         // Hide the expanded stuff at first
@@ -103,7 +115,7 @@ class ResumeLineDetail extends HTMLElement {
         const content = document.createElement('div');
         content.setAttribute('class', 'resume-line-expanded');
         content.defaultContent = "This is an explanation of my role at Company."
-        content.textContent = this.getAttribute('detail-text') || content.defaultContent;
+        content.innerHTML = this.getAttribute('detail-text') || content.defaultContent;
         this.wrapper.appendChild(content);
 
         // Embedded video
