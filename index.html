@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Site</title>
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+</head>
+<body class="body">
+    <resume-header-name></resume-header-name>
+    <resume-header-contact-bar>
+        <resume-header-contact-item contact-url="mailto:me@me.com" contact-text="<strong>email@gmail.com</strong>"></resume-header-contact-item>
+        <resume-header-contact-item contact-text="|"></resume-header-contact-item>
+        <resume-header-contact-item contact-text="123-456-7890"></resume-header-contact-item>
+        <resume-header-contact-item contact-text="|"></resume-header-contact-item>
+        <resume-header-contact-item contact-text="github.com"></resume-header-contact-item>
+    </resume-header-contact-bar>
+    <resume-section section-text="Education">
+        <resume-subsection
+            left-text="<strong>Company</strong>, role"
+            right-text="Dates">
+            <resume-line 
+                left-text="<strong>Company</strong>, role"
+                center-text="Optional Descriptive text"
+                right-text="Dates">
+                <resume-line-detail
+                    detail-text="sample detail text"
+                    video-url="https://www.youtube.com/watch?v=Zsz5QhzACJs"
+                    article-url="projects/article.html">
+                </resume-line-detail>
+            </resume-line>
+            <resume-line 
+                left-text="<strong>Company</strong>, role"
+                center-text="Optional Descriptive text"
+                right-text="Dates">
+                <resume-line-detail></resume-line-detail>
+            </resume-line>
+            <resume-line 
+                left-text="<strong>Company</strong>, role"
+                center-text="Optional Descriptive text"
+                right-text="Dates">
+            </resume-line>
+        </resume-subsection>
+    </resume-section>
+    <resume-section section-text="Experience">
+        <resume-subsection
+            left-text="<strong>Company</strong>, role"
+            right-text="Dates">
+            <resume-line line-text="bullet point desc.">
+                <resume-line-detail
+                    detail-text="it sucked man tbh"
+                    video-url="https://www.youtube.com/watch?v=t-yCg-0-baE"
+                    article-url="projects/article.html">
+                </resume-line-detail>
+            </resume-line>
+        </resume-subsection>
+    </resume-section>
+    <resume-section section-text="Projects">
+    </resume-section>
+    <resume-section section-text="Skills">
+    </resume-section>
+    <script type="module" src="./elements/resume-section.js"></script>
+    <script type="module" src="./elements/resume-subsection.js"></script>
+    <script type="module" src="./elements/resume-line.js"></script>
+    <script type="module" src="./elements/resume-header.js"></script>
+</body>
+</html>
