@@ -1,0 +1,41 @@
+.resume-line-wrapper {
+    position: relative;
+}
+
+.resume-line {
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    color: black;
+    overflow: visible;
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+}
+
+.resume-line-bullet {
+    width: 0.15in; /* Bullet point spacing */
+}
+
+.resume-line-expanded {
+    position: relative;
+    background-color: white;
+    padding: 8px;
+    border: 1px solid lightgray;
+    overflow: visible;
+    justify-content: left;
+}
+
+.resume-line-detail-video {
+    text-align: center;
+}
+
+.resume-line-detail-readmore {
+    background-color: white;
+    border: 1px solid lightgray;
+}
+
+.resume-line-hovered {
+    filter: drop-shadow(0 2px 3px rgba(117, 0, 196, 0.521));
+    z-index: 10;
+}
