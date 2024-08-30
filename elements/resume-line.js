@@ -17,15 +17,15 @@ class ResumeLine extends HTMLElement {
         this.trigger = document.createElement('div');
         this.trigger.setAttribute('class', 'resume-line');
         this.trigger.defaultContent = "Default resume line text.";
-        this.expandedState = false;
         
         // Create the content element
         this.content = document.createElement('div');
-        this.content.setAttribute('class', 'resume-line-expanded');
-
+        this.content.setAttribute('class', 'resume-line-content');
+        this.content.isExpanded = false;
+        
         this.detailSlot = document.createElement('slot');
         this.content.appendChild(this.detailSlot);
-
+        
         // Build the structure of the tree
         this.wrapper.appendChild(this.trigger);
         this.wrapper.appendChild(this.content);
@@ -55,9 +55,6 @@ class ResumeLine extends HTMLElement {
         this.lineText.innerHTML = this.getAttribute('line-text') || this.trigger.defaultContent;
         this.trigger.appendChild(this.lineText);
 
-        // Hide the expanded stuff at first
-        this.content.style.display = 'none';
-
         // The glow should only happen if there is something in the slot to view
         this.detailSlot.addEventListener('slotchange', () => {
             const assignedNodes = this.detailSlot.assignedElements();
@@ -75,8 +72,33 @@ class ResumeLine extends HTMLElement {
     }
 
     _toggleContent(content) {
-        this.expandedState = content.style.display=='block' ? false : true;
-        content.style.display = this.expandedState==false ? 'none' : 'block';
+        // Scroll to the content after the transition
+        content.addEventListener('transitionend', (event) => {
+            this._onTransitionEnd(event, content);
+        });
+
+        // Toggle content visibility with a transition
+        const naturalHeight = content.scrollHeight
+        if (!content.isExpanded) {
+            // Apply styling first to avoid flashing
+            content.classList.add('class', 'resume-line-content-border');
+            content.style.maxHeight = `${naturalHeight}px`;
+            content.isExpanded = true;
+        } else {
+            content.style.maxHeight = '0px';
+            content.isExpanded = false;
+        }
+    }
+    
+    _onTransitionEnd(event, content) {
+        content.removeEventListener('transitionend', this._onTransitionEnd)
+        if (content.style.maxHeight !== '0px') {
+            content.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+        } else {
+            // Remove the styling here to avoid flashing
+            content.classList.remove('class', 'resume-line-content-border')
+        }
+
     }
 
     _glowTrigger(element) {
