@@ -1,9 +1,8 @@
 .resume-body {
     background-color: white;
     font-family: 'Calibri', sans-serif;
-    font-size: 20px;
-    width: 45em;
+    width: 70rem;
     margin: auto;
     /* border: 10px solid red; */
-    padding: 0.5in;
+    /* padding: 0.5in; */
 }

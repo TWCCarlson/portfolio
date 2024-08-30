@@ -11,19 +11,17 @@
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    font-size: 1rem;
 }
 
 .resume-subsection-left-text {
-    padding: 5px 0px;
     white-space: nowrap;
 }
 
 .resume-subsection-center-text {
-    padding: 5px 0px;
     white-space: nowrap;
 }
 
 .resume-subsection-right-text {
-    padding: 5px 0px;
     white-space: nowrap;
 }

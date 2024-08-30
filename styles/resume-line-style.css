@@ -11,6 +11,7 @@
     display: flex;
     justify-content: left;
     overflow-wrap: normal;
+    font-size: 1rem;
 }
 
 .resume-line-bullet {
