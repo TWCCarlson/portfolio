@@ -18,13 +18,17 @@
     flex-shrink: 0;
 }
 
-.resume-line-expanded {
+.resume-line-content {
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    max-height: 0px;
     position: relative;
     background-color: white;
-    padding: 8px;
+}
+
+.resume-line-content-border {
     border: 1px solid lightgray;
-    overflow: visible;
-    justify-content: left;
+    padding: 8px;
 }
 
 .resume-line-detail-video {
@@ -37,6 +41,6 @@
 }
 
 .resume-line-hovered {
-    filter: drop-shadow(0 2px 3px rgba(117, 0, 196, 0.521));
+    filter: drop-shadow(0 0 5px rgba(117, 0, 196, 0.521));
     z-index: 10;
 }
