@@ -38,7 +38,7 @@ class ResumeLine extends HTMLElement {
         const depthCharMap = {
             "0": ["", "0in", "0in"],
             "1": ["•", "0.2in", "0in"],
-            "2": ["o", "0.20in", "0.20in"]
+            "2": ["◦", "0.20in", "0.20in"]
         }
         // Only make the bullet point element if it should exist (not 0-indent)
         if (depthCharMap[bulletDepth][1]!='0in') {

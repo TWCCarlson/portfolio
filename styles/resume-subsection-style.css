@@ -11,8 +11,9 @@
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    font-size: 1.72rem;
+    font-size: 1.8rem;
     line-height: 1.5em;
+    padding: 0.2em 0 0 0;
 }
 
 .resume-subsection-left-text {
@@ -25,4 +26,5 @@
 
 .resume-subsection-right-text {
     white-space: nowrap;
+    color: var(--primary);
 }

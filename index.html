@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Site (dev)</title>
     <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link rel="stylesheet" type="text/css" href="./styles/colors.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body class="body">
 <resume-body>
@@ -12,7 +16,7 @@
     <resume-header-contact-bar>
         <resume-header-contact-item 
             contact-url="mailto:thomaswccarlson@gmail.com" 
-            contact-text="<b>thomaswccarlson@gmail.com</b>">
+            contact-text="thomaswccarlson@gmail.com">
         </resume-header-contact-item>
         <resume-header-contact-item contact-text="|"></resume-header-contact-item>
         <resume-header-contact-item 
@@ -27,7 +31,7 @@
     </resume-header-contact-bar>
     <resume-section section-text="Education"><hr>
         <resume-subsection
-            left-text="<b>CSU Sacramento</b> — MS Mechanical Engineering, GPA 4.0/4.0, Controls and Robotics Focus"
+            left-text="<b>CSU Sacramento</b> — MS Mechanical Engineering, GPA 4.0/4.0"
             right-text="Jan 2024">
         </resume-subsection>
         <resume-subsection
@@ -37,11 +41,16 @@
     </resume-section>
     <resume-section section-text="Experience"><hr>
         <resume-subsection
-            left-text="<b>CSU Sacramento Industrial Robotics Lab</b>, Lab Development & Lecturer"
+            left-text="<b>CSU Sacramento Robotics Lab</b>, Lab Development & Lecturer"
             right-text="Aug 2021 — May 2022">
             <resume-line 
                 indent-depth="1"
-                line-text="Installed and tested Kuka, Nachi, Beckhoff, and Cognex equipment in CSU Sacramento’s new robotics lab">
+                line-text="Installed and tested Kuka, Nachi, Beckhoff, and Cognex equipment in CSU Sacramento's new robotics lab">
+                <resume-line-detail
+                    detail-text="sample detail text"
+                    video-url="https://www.youtube.com/watch?v=Zsz5QhzACJs"
+                    article-url="projects/article.html">
+                </resume-line-detail>
             </resume-line>
             <resume-line
                 indent-depth="1"
@@ -63,7 +72,8 @@
     </resume-section>
     <resume-section section-text="Projects"><hr>
         <resume-subsection tag="LPG"
-            left-text="<b>Rocket Engine Software and Control Team Lead</b>, Liquid Propulsion Group at CSUS">
+            left-text="<b>Rocket Engine Software and Control Team Lead</b>"
+            right-text="Liquid Propulsion Group at CSUS">
             <resume-line
                 indent-depth="1"
                 line-text="Led a team of 4 student engineers in design, assembly, and testing of the control hardware and software for a 560lbf thrust bipropellant rocket engine, culminating in a fault-free hot fire and engine validation">
@@ -94,7 +104,8 @@
             </resume-line>
         </resume-subsection>
         <resume-subsection tag="FleetBench"
-            left-text="<b>FleetBench</b>, Multi-Agent Simulation Application">
+            left-text="<b>FleetBench</b>"
+            right-text="Multi-Agent Simulation Application">
             <resume-line
                 indent-depth="1"
                 line-text="Augmented researcher efforts in multi-robot pathfinding by building a Python desktop application with dynamic UIs, algorithm documentation, statistical evaluation, and built-in algorithm extensibility">
@@ -109,10 +120,15 @@
             </resume-line>
         </resume-subsection>
         <resume-subsection tag="OSRSWiki"
-            left-text="<b>Cartographer Project</b>, OSRS Wiki Map Tool Contribution">
+            left-text="<b>Cartographer Project</b>"
+            right-text="OSRS Wiki Map Tool Contribution">
             <resume-line
                 indent-depth="1"
-                line-text="Enabled the automation of weekly updates to the Wiki’s Leaflet map image data set and reduced processing time requirements by 54% by overhauling the image processing strategy to use the Pyvips library">
+                line-text="Enabled the automation of weekly updates to the Wiki’s Leaflet map image data set using GitHub CI/CD">
+            </resume-line>
+            <resume-line
+                indent-depth="1"
+                line-text="Reduced map generation time by 54% via overhauling the image processing strategy to use the Pyvips library">
             </resume-line>
             <resume-line
                 indent-depth="1"

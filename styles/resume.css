@@ -1,6 +1,8 @@
 .resume-body {
     background-color: white;
-    font-family: sans-serif;
-    width: 80rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    width: 85rem;
     margin: auto;
 }
