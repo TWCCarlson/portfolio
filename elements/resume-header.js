@@ -63,7 +63,7 @@ class ResumeHeaderContactItem extends HTMLElement {
 
         // Containing element
         const wrapper = document.createElement('a');
-        wrapper.setAttribute('class', 'resume-header-contact-item');
+        wrapper.classList.add('resume-header-contact-item');
 
         // Get the passed attributes
         const url = this.getAttribute('contact-url');

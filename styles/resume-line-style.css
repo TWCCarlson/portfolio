@@ -5,8 +5,6 @@
 .resume-line {
     position: relative;
     z-index: 1;
-    background-color: white;
-    color: black;
     overflow: visible;
     display: flex;
     justify-content: left;
@@ -14,24 +12,28 @@
     font-size: 1.6rem;
     line-height: 1.5em;
     padding: 0 0 0.5em 0;
+    background-color: var(--background);
+    color: var(--text);
 }
 
 .resume-line-bullet {
     position: relative;
     flex-shrink: 0;
+    color: var(--primary);
 }
 
 .resume-line-content {
     overflow: hidden;
-    transition: max-height 0.5s ease-out;
-    max-height: 0px;
     position: relative;
-    background-color: white;
+    background-color: var(--secondary-background);
+    color: var(--text);
 }
 
-.resume-line-content-border {
-    border: 1px solid lightgray;
-    padding: 8px;
+.resume-line-content-wrapper {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+    background-color: var(--background);
 }
 
 .resume-line-detail-video {
@@ -39,7 +41,6 @@
 }
 
 .resume-line-detail-readmore {
-    background-color: white;
     border: 1px solid lightgray;
 }
 

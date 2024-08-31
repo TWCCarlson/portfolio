@@ -4,10 +4,14 @@ class ResumeLine extends HTMLElement {
         this.attachShadow({mode: 'open'});
 
         // Import styles to the shadow DOM
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = './styles/resume-line-style.css';
-        link.type = 'text/css';
+        const styleLink = document.createElement('link');
+        styleLink.rel = 'stylesheet';
+        styleLink.href = './styles/resume-line-style.css';
+        styleLink.type = 'text/css';
+        const colorsLink = document.createElement('link');
+        colorsLink.rel = 'stylesheet';
+        colorsLink.href = './styles/colors.css';
+        colorsLink.type = 'text/css';
 
         // Placing element
         this.wrapper = document.createElement('div');
@@ -30,7 +34,8 @@ class ResumeLine extends HTMLElement {
         this.wrapper.appendChild(this.trigger);
         this.wrapper.appendChild(this.content);
         this.shadowRoot.appendChild(this.wrapper);
-        this.shadowRoot.appendChild(link);
+        this.shadowRoot.appendChild(styleLink);
+        this.shadowRoot.appendChild(colorsLink);
     }
 
     connectedCallback() {

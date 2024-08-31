@@ -1,7 +1,7 @@
 .resume-header-name {
-    background-color: white;
+    background-color: var(--background);
+    color: var(--primary);
     text-align: center;
-    color: rgb(33 94 153);
     font-size: 4rem;
 }
 
@@ -11,7 +11,8 @@
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
-    background-color: white;
+    background-color: var(--background);
+    color: var(--primary);
     font-size: 1.7rem;
     line-height: 1.5em;
     padding: 0 0 0.25em 0;
@@ -19,4 +20,24 @@
 
 .resume-header-contact-item {
     white-space: nowrap;
+}
+
+a.resume-header-contact-item:link {
+    color: var(--interactable);
+    text-decoration: none;
+}
+
+a.resume-header-contact-item:visited {
+    color: var(--interactable);
+    text-decoration: none;
+}
+
+a.resume-header-contact-item:hover {
+    color: var(--interactable);
+    text-decoration: underline;
+}
+
+a.resume-header-contact-item:active {
+    color: var(--interactable);
+    text-decoration: underline;
 }
