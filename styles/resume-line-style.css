@@ -11,29 +11,25 @@
     overflow-wrap: normal;
     font-size: 1.6rem;
     line-height: 1.5em;
-    padding: 0 0 0.5em 0;
+    padding: 0.1em 0 0.1em 0;
     background-color: var(--background);
     color: var(--text);
 }
 
+.resume-line-spacer {
+    content: '';
+    padding: 0.2em;
+    background-color: var(--background); 
+}
+
 .resume-line-bullet {
-    position: relative;
     flex-shrink: 0;
     color: var(--primary);
 }
 
 .resume-line-content {
-    overflow: hidden;
-    position: relative;
     background-color: var(--secondary-background);
     color: var(--text);
-}
-
-.resume-line-content-wrapper {
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.5s ease;
-    background-color: var(--background);
 }
 
 .resume-line-detail-video {
@@ -42,9 +38,4 @@
 
 .resume-line-detail-readmore {
     border: 1px solid lightgray;
-}
-
-.resume-line-hovered {
-    filter: drop-shadow(0 0 5px rgba(117, 0, 196, 0.521));
-    z-index: 10;
 }

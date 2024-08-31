@@ -1,3 +1,5 @@
+import { elementTogglesContent } from "../shared-modules/toggle-container.js";
+
 class ResumeLine extends HTMLElement {
     constructor() {
         super();
@@ -25,9 +27,10 @@ class ResumeLine extends HTMLElement {
         // Create the content element
         this.content = document.createElement('div');
         this.content.setAttribute('class', 'resume-line-content');
-        this.content.isExpanded = false;
-        
+
+        // Prepare to load content into the slot
         this.detailSlot = document.createElement('slot');
+        this.detailSlotFilled = false;
         this.content.appendChild(this.detailSlot);
         
         // Build the structure of the tree
@@ -36,13 +39,18 @@ class ResumeLine extends HTMLElement {
         this.shadowRoot.appendChild(this.wrapper);
         this.shadowRoot.appendChild(styleLink);
         this.shadowRoot.appendChild(colorsLink);
+
+        const spacer = document.createElement('div');
+        spacer.setAttribute('class', 'resume-line-spacer');
+        this.shadowRoot.appendChild(spacer)
     }
 
     connectedCallback() {
+        // Create the line's content
         const bulletDepth = this.getAttribute('indent-depth');
         const depthCharMap = {
             "0": ["", "0in", "0in"],
-            "1": ["•", "0.2in", "0in"],
+            "1": ["•", "0.20in", "0in"],
             "2": ["◦", "0.20in", "0.20in"]
         }
         // Only make the bullet point element if it should exist (not 0-indent)
@@ -60,58 +68,19 @@ class ResumeLine extends HTMLElement {
         this.lineText.innerHTML = this.getAttribute('line-text') || this.trigger.defaultContent;
         this.trigger.appendChild(this.lineText);
 
-        // The glow should only happen if there is something in the slot to view
+        // Implement interactivity if there is slot content
+        const assignedNodes = this.detailSlot.assignedNodes().filter(node => {
+            return !(node.nodeType === Node.TEXT_NODE && !node.textContent.trim());
+        })
+
         this.detailSlot.addEventListener('slotchange', () => {
-            const assignedNodes = this.detailSlot.assignedElements();
-            if (assignedNodes.length > 0) {
-                this._initEvents(this.trigger, this.content);
+            if (!this.detailSlotFilled && !(assignedNodes.length === 0)) {
+                this.detailSlotFilled = true;
+                // If content is added to the slot, make it
+                const contentWrapper = elementTogglesContent(this.trigger, this.content);
+                this.wrapper.appendChild(contentWrapper);
             }
         });
-    }
-
-    _initEvents(trigger, content) {
-        trigger.addEventListener('click', () => this._toggleContent(content));
-        this.wrapper.addEventListener('mouseover', () => this._glowTrigger(this.wrapper));
-        this.wrapper.addEventListener('mouseout', () => this._resetTrigger(this.wrapper));
-        content.addEventListener('click', () => this._toggleContent(content));
-    }
-
-    _toggleContent(content) {
-        // Scroll to the content after the transition
-        content.addEventListener('transitionend', (event) => {
-            this._onTransitionEnd(event, content);
-        });
-
-        // Toggle content visibility with a transition
-        const naturalHeight = content.scrollHeight
-        if (!content.isExpanded) {
-            // Apply styling first to avoid flashing
-            content.classList.add('class', 'resume-line-content-border');
-            content.style.maxHeight = `${naturalHeight}px`;
-            content.isExpanded = true;
-        } else {
-            content.style.maxHeight = '0px';
-            content.isExpanded = false;
-        }
-    }
-    
-    _onTransitionEnd(event, content) {
-        content.removeEventListener('transitionend', this._onTransitionEnd)
-        if (content.style.maxHeight !== '0px') {
-            content.scrollIntoView({behavior: 'smooth', block: 'nearest'});
-        } else {
-            // Remove the styling here to avoid flashing
-            content.classList.remove('class', 'resume-line-content-border')
-        }
-
-    }
-
-    _glowTrigger(element) {
-        element.classList.add('resume-line-hovered');
-    }
-
-    _resetTrigger(element) {
-        element.classList.remove('resume-line-hovered');
     }
 }
 customElements.define('resume-line', ResumeLine);
