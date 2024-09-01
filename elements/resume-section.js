@@ -4,10 +4,14 @@ class ResumeSection extends HTMLElement {
         this.attachShadow({mode: 'open'});
 
         // Import styles to the shadow DOM
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = './styles/resume-section-style.css';
-        link.type = 'text/css';
+        const elementStyleLink = document.createElement('link');
+        elementStyleLink.rel = 'stylesheet';
+        elementStyleLink.href = './styles/resume-section-style.css';
+        elementStyleLink.type = 'text/css';
+        const rootStyleLink = document.createElement('link');
+        rootStyleLink.rel = 'stylesheet';
+        rootStyleLink.href = './styles/root-styles.css';
+        rootStyleLink.type = 'text/css';
 
         // Container element
         this.wrapper = document.createElement('div');
@@ -26,7 +30,8 @@ class ResumeSection extends HTMLElement {
         this.wrapper.appendChild(this.content);
         this.wrapper.appendChild(this.subcontent);
         this.shadowRoot.append(this.wrapper);
-        this.shadowRoot.append(link);
+        this.shadowRoot.append(rootStyleLink);
+        this.shadowRoot.append(elementStyleLink);
         this.subcontent.appendChild(slot);
 
         // Listen to mouse events

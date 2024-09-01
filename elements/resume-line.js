@@ -6,14 +6,14 @@ class ResumeLine extends HTMLElement {
         this.attachShadow({mode: 'open'});
 
         // Import styles to the shadow DOM
-        const styleLink = document.createElement('link');
-        styleLink.rel = 'stylesheet';
-        styleLink.href = './styles/resume-line-style.css';
-        styleLink.type = 'text/css';
-        const colorsLink = document.createElement('link');
-        colorsLink.rel = 'stylesheet';
-        colorsLink.href = './styles/colors.css';
-        colorsLink.type = 'text/css';
+        const elementStyleLink = document.createElement('link');
+        elementStyleLink.rel = 'stylesheet';
+        elementStyleLink.href = './styles/resume-line-style.css';
+        elementStyleLink.type = 'text/css';
+        const rootStyleLink = document.createElement('link');
+        rootStyleLink.rel = 'stylesheet';
+        rootStyleLink.href = './styles/root-styles.css';
+        rootStyleLink.type = 'text/css';
 
         // Placing element
         this.wrapper = document.createElement('div');
@@ -26,7 +26,7 @@ class ResumeLine extends HTMLElement {
         
         // Create the content element
         this.content = document.createElement('div');
-        this.content.setAttribute('class', 'resume-line-content');
+        
 
         // Prepare to load content into the slot
         this.detailSlot = document.createElement('slot');
@@ -37,8 +37,8 @@ class ResumeLine extends HTMLElement {
         this.wrapper.appendChild(this.trigger);
         this.wrapper.appendChild(this.content);
         this.shadowRoot.appendChild(this.wrapper);
-        this.shadowRoot.appendChild(styleLink);
-        this.shadowRoot.appendChild(colorsLink);
+        this.shadowRoot.appendChild(elementStyleLink);
+        this.shadowRoot.appendChild(rootStyleLink);
 
         const spacer = document.createElement('div');
         spacer.setAttribute('class', 'resume-line-spacer');
@@ -51,8 +51,8 @@ class ResumeLine extends HTMLElement {
         const depthCharMap = {
             "0": ["", "0in", "0in"],
             "1": ["•", "0.20in", "0in"],
-            "2": ["◦", "0.20in", "0.20in"]
-        }
+            "2": ["•", "0.20in", "0.20in"]
+        } /* ◦ */
         // Only make the bullet point element if it should exist (not 0-indent)
         if (depthCharMap[bulletDepth][1]!='0in') {
             const lineBullet = document.createElement('div');
@@ -76,6 +76,7 @@ class ResumeLine extends HTMLElement {
         this.detailSlot.addEventListener('slotchange', () => {
             if (!this.detailSlotFilled && !(assignedNodes.length === 0)) {
                 this.detailSlotFilled = true;
+                this.content.setAttribute('class', 'resume-line-content');
                 // If content is added to the slot, make it
                 const contentWrapper = elementTogglesContent(this.trigger, this.content);
                 this.wrapper.appendChild(contentWrapper);
@@ -92,10 +93,14 @@ class ResumeLineDetail extends HTMLElement {
         this.attachShadow({mode: 'open'});
 
         // Import styles to the shadow DOM
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = './styles/resume-line-style.css';
-        link.type = 'text/css';
+        const rootStyleLink = document.createElement('link');
+        rootStyleLink.rel = 'stylesheet';
+        rootStyleLink.href = './styles/resume-line-style.css';
+        rootStyleLink.type = 'text/css';
+        const elementStyleLink = document.createElement('link');
+        elementStyleLink.rel = 'stylesheet';
+        elementStyleLink.href = './styles/root-styles.css';
+        elementStyleLink.type = 'text/css';
 
         // Placing element
         this.wrapper = document.createElement('div');
@@ -103,16 +108,17 @@ class ResumeLineDetail extends HTMLElement {
 
         // Build the shadow DOM
         this.shadowRoot.appendChild(this.wrapper);
-        this.shadowRoot.appendChild(link)
+        this.shadowRoot.appendChild(rootStyleLink);
+        this.shadowRoot.appendChild(elementStyleLink);
     }
 
     connectedCallback() {
         // Text content of the line details
-        const content = document.createElement('div');
-        content.setAttribute('class', 'resume-line-expanded');
-        content.defaultContent = "This is an explanation of my role at Company."
-        content.innerHTML = this.getAttribute('detail-text') || content.defaultContent;
-        this.wrapper.appendChild(content);
+        const text = document.createElement('div');
+        text.setAttribute('class', 'resume-line-detail-text');
+        text.defaultContent = "This is an explanation of my role at Company."
+        text.innerHTML = this.getAttribute('detail-text') || content.defaultContent;
+        this.wrapper.appendChild(text);
 
         // Embedded video
         const videoURL = this.getAttribute('video-url');

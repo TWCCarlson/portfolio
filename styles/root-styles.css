@@ -1,0 +1,33 @@
+:root {
+    /* Colors */
+    --text: hsla(180, 9%, 98%, 0.87);
+    --interactable: #12CBCB;
+    --background: #141414;
+    --primary: #8364ff;
+    --secondary: #80c1ff;
+    --secondary-background: rgba(62, 71, 108, 0.301);
+
+    /* Font sizes */
+    --resume-section-fs: 2.2rem;
+    --resume-subsection-fs: 1.8rem;
+    --resume-line-fs: 1.6rem;
+    --resume-line-detail-fs: 1.6rem;
+
+    /* Line heights */
+    --resume-section-lh: 1.5em;
+    --resume-subsection-lh: 1.5em;
+    --resume-line-lh: 1.5em;
+    --resume-line-detail-lh: 1.5em;
+
+    /* Padding sizes */
+    --resume-section-pad: 0.825em 0 0 0;
+    --resume-subsection-pad: 0.2em 0 0 0;
+    --resume-line-pad: 0.1em 0 0.1em 0;
+    --resume-line-detail-pad: 0.1em 0 0.1em 0;
+
+    /* Gap sizes */
+    /* --resume-section-gap: 0; */
+    --resume-subsection-gap: 10px;
+    /* --resume-line-gap: 0; */
+    /* --resume-line-detail-gap: 0; */
+}

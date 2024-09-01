@@ -4,10 +4,14 @@ class ResumeSubSection extends HTMLElement {
         this.attachShadow({mode: 'open'});
 
         // Import styles to the shadow DOM
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = './styles/resume-subsection-style.css';
-        link.type = 'text/css';
+        const elementStyleLink = document.createElement('link');
+        elementStyleLink.rel = 'stylesheet';
+        elementStyleLink.href = './styles/resume-subsection-style.css';
+        elementStyleLink.type = 'text/css';
+        const rootStyleLink = document.createElement('link');
+        rootStyleLink.rel = 'stylesheet';
+        rootStyleLink.href = './styles/root-styles.css';
+        rootStyleLink.type = 'text/css';
         
         // Container element
         this.wrapper = document.createElement('div');
@@ -28,7 +32,8 @@ class ResumeSubSection extends HTMLElement {
         this.wrapper.appendChild(this.trigger);
         this.wrapper.appendChild(this.content);
         this.shadowRoot.append(this.wrapper);
-        this.shadowRoot.append(link);
+        this.shadowRoot.append(elementStyleLink);
+        this.shadowRoot.append(rootStyleLink);
     }
 
     connectedCallback() {

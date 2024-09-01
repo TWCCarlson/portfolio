@@ -9,9 +9,9 @@
     display: flex;
     justify-content: left;
     overflow-wrap: normal;
-    font-size: 1.6rem;
-    line-height: 1.5em;
-    padding: 0.1em 0 0.1em 0;
+    font-size: var(--resume-line-fs);
+    line-height: var(--resume-line-lh);
+    padding: var(--resume-line-pad);
     background-color: var(--background);
     color: var(--text);
 }
@@ -24,12 +24,23 @@
 
 .resume-line-bullet {
     flex-shrink: 0;
-    color: var(--primary);
+    color: var(--secondary);
 }
 
 .resume-line-content {
     background-color: var(--secondary-background);
     color: var(--text);
+    border: 10px solid transparent;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 10px;
+    margin-right: 8px;
+}
+
+.resume-line-detail-text {
+    font-size: var(--resume-line-detail-fs);
+    line-height: var(--resume-line-detail-lh);
+    padding: var(--resume-line-detail-pad);
 }
 
 .resume-line-detail-video {
@@ -37,5 +48,8 @@
 }
 
 .resume-line-detail-readmore {
-    border: 1px solid lightgray;
+    /* border: 1px solid lightgray; */
+    color: var(--interactable);
+    font-size: var(--resume-line-detail-fs);
+    line-height: var(--resume-line-detail-lh);
 }

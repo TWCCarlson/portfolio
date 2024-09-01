@@ -14,7 +14,7 @@ export function elementTogglesContent(element, content) {
     
     element.addEventListener('click', () => toggleContent(wrapper));
     content.addEventListener('click', () => toggleContent(wrapper));
-    element.parentElement.classList.add('foldable-content-hovered')
+    element.parentElement.classList.add('content-folder')
     
     // element.appendChild(wrapper);
     wrapper.appendChild(styleLink);

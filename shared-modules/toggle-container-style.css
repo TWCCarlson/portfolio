@@ -6,33 +6,32 @@
     border: 2px solid transparent;
 }
 
-.foldable-content-hovered {
-    position: relative; /* Required for pseudo-elements */
+.content-folder {
+    position: relative;
     z-index: 10;
-    border-right: 2px solid var(--secondary);
+    border-right: 2px solid var(--primary);
 }
 
-.foldable-content-hovered::after {
+.content-folder::after {
     content: '';
-    display: block;
+    display: inline;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(to left, var(--secondary) 75%, transparent 100%);
+    background: linear-gradient(to left, var(--primary) 80%, transparent 100%);
     background-size: 200% 100%;
-    background-position: 100% bottom;
+    background-position: 0 bottom;
     transition: transform 0.5s ease, background-position 0.5s ease;
     transform: scaleX(0);
     transform-origin: right;
 }
 
-.foldable-content-hovered:hover::after {
+.content-folder:hover::after {
     content: '';
-    display: block;
+    display: inline;
     transform: scaleX(1);
     background-position: 0 bottom;
 }
-
 
