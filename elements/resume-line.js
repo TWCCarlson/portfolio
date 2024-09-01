@@ -49,18 +49,30 @@ class ResumeLine extends HTMLElement {
         // Create the line's content
         const bulletDepth = this.getAttribute('indent-depth');
         const depthCharMap = {
-            "0": ["", "0in", "0in"],
-            "1": ["•", "0.20in", "0in"],
-            "2": ["•", "0.20in", "0.20in"]
+            "0": ["", "0em", "0em"],
+            "1": ["•", "0.5em", "0em"],
+            "2": ["•", "0.5em", "1em"]
         } /* ◦ */
+
         // Only make the bullet point element if it should exist (not 0-indent)
         if (depthCharMap[bulletDepth][1]!='0in') {
-            const lineBullet = document.createElement('div');
-            lineBullet.setAttribute('class', 'resume-line-bullet');
-            lineBullet.innerHTML = depthCharMap[bulletDepth][0];
-            lineBullet.style.width = depthCharMap[bulletDepth][1];
-            lineBullet.style.marginLeft = depthCharMap[bulletDepth][2];
-            this.trigger.appendChild(lineBullet)
+            const bulletIndent = document.createElement('div');
+            bulletIndent.style.width = depthCharMap[bulletDepth][2];
+            bulletIndent.setAttribute('class', 'resume-line-bullet');
+            this.trigger.appendChild(bulletIndent);
+
+            this.lineBulletContainer = document.createElement('div');
+            this.lineBulletContainer.setAttribute('class', 'resume-line-bullet');
+            this.lineBullet = document.createElement('div');
+            this.lineBullet.setAttribute('class', 'resume-line-bullet-char');
+            this.lineBullet.innerHTML = depthCharMap[bulletDepth][0];
+            this.lineBulletContainer.appendChild(this.lineBullet);
+            this.trigger.appendChild(this.lineBulletContainer);
+
+            const bulletPad = document.createElement('div');
+            bulletPad.style.width = depthCharMap[bulletDepth][1];
+            bulletPad.setAttribute('class', 'resume-line-bullet');
+            this.trigger.appendChild(bulletPad);
         }
 
         // Create the line text
@@ -72,7 +84,6 @@ class ResumeLine extends HTMLElement {
         const assignedNodes = this.detailSlot.assignedNodes().filter(node => {
             return !(node.nodeType === Node.TEXT_NODE && !node.textContent.trim());
         })
-
         this.detailSlot.addEventListener('slotchange', () => {
             if (!this.detailSlotFilled && !(assignedNodes.length === 0)) {
                 this.detailSlotFilled = true;
@@ -80,6 +91,17 @@ class ResumeLine extends HTMLElement {
                 // If content is added to the slot, make it
                 const contentWrapper = elementTogglesContent(this.trigger, this.content);
                 this.wrapper.appendChild(contentWrapper);
+
+                // Update the line bullet
+                this.lineBullet.innerHTML = ">";
+                this.lineBullet.style.fontWeight = 'bold';
+                this.lineBullet.style.color = "var(--interactable)";
+
+                // Animate
+                this.wrapper.addEventListener('click', () => {
+                    this.trigger.classList.toggle('active');
+                    this.trigger.classList.toggle('resume-line-expanded');
+                })
             }
         });
     }

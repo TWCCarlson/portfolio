@@ -14,6 +14,8 @@
     padding: var(--resume-line-pad);
     background-color: var(--background);
     color: var(--text);
+    border: solid transparent;
+    transition: 0.5s all;
 }
 
 .resume-line-spacer {
@@ -27,6 +29,19 @@
     color: var(--secondary);
 }
 
+.resume-line-bullet-char {
+    transition: transform 0.3s ease;
+    /* transform-origin: center; */
+}
+
+.resume-line.active .resume-line-bullet-char {
+    transform: rotateZ(90deg);
+}
+
+.resume-line:hover .resume-line-bullet-char {
+    transform: rotateZ(90deg);
+}
+
 .resume-line-content {
     background-color: var(--secondary-background);
     color: var(--text);
@@ -34,6 +49,16 @@
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     margin-bottom: 10px;
+    margin-right: 8px;
+}
+
+.resume-line-expanded {
+    background-color: var(--secondary-background);
+    color: var(--text);
+    border: solid transparent;
+    border-width: 5px 10px 10px 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     margin-right: 8px;
 }
 
