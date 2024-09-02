@@ -60,7 +60,7 @@
 .resume-line-content {
     background-color: var(--secondary-background);
     color: var(--text);
-    border-width: 0 1.5em 0.5em 2.5em;
+    border-width: 0 1.5em 1em 2.5em;
     border-color: transparent;
     border-style: solid;
     border-bottom-left-radius: 10px;
@@ -94,6 +94,14 @@
     color: var(--interactable);
     font-size: var(--resume-line-detail-fs);
     line-height: var(--resume-line-detail-lh);
+}
+
+.resume-line-detail-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    border-radius: 10px;
 }
 
 a {

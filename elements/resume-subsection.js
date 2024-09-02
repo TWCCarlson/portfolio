@@ -66,7 +66,6 @@ class ResumeSubSection extends HTMLElement {
 
         // Content should be visible at first
         this.content.style.display = 'block';
-        console.log(this.trigger.textContent, this.expandedState)
 
         this.detailSlot.addEventListener('slotchange', () => {
             const assignedElements = this.detailSlot.assignedElements();

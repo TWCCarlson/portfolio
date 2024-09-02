@@ -172,11 +172,12 @@ class ResumeLineDetail extends HTMLElement {
 
     connectedCallback() {
         // Text content of the line details
-        const text = document.createElement('div');
-        text.setAttribute('class', 'resume-line-detail-text');
-        text.defaultContent = "This is an explanation of my role at Company."
-        text.innerHTML = this.getAttribute('detail-text') || content.defaultContent;
-        this.wrapper.appendChild(text);
+        const text = this.getAttribute('detail-text');
+        if (text) {
+            const textContainer = document.createElement('div');
+            textContainer.setAttribute('class', 'resume-line-detail-text');
+            this.wrapper.appendChild(textContainer);
+        }
 
         // Embedded video
         const videoURL = this.getAttribute('video-url');
@@ -196,6 +197,16 @@ class ResumeLineDetail extends HTMLElement {
             }
         }
         
+        // Image
+        const imageURL = this.getAttribute('image-url');
+        if (imageURL) {
+            // Container
+            const imContainer = document.createElement('img');
+            imContainer.src=imageURL;
+            imContainer.setAttribute('class', 'resume-line-detail-image')
+            this.wrapper.appendChild(imContainer);
+        }
+
         // Read more style link to another page on the site
         const articleURL = this.getAttribute('article-url');
         if (articleURL) {
