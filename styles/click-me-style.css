@@ -1,0 +1,35 @@
+.click-me {
+    display: flex;
+}
+
+.click-me-image {
+    font-size: var(--resume-line-lh);
+    object-fit: contain;
+    height: 6rem;
+    position: absolute;
+    top: 1em;
+    /* left: 100%; */
+    right: 100%;
+    padding-right: 0.5em;
+}
+
+.click-me-text {
+    flex: 0 1;
+    font-size: var(--resume-line-detail-fs);
+    /* max-width: 8em; */
+    width: 13ch;
+    width:fit- content;
+    /* object-fit: contain; */
+    /* width: fit-content 50%; */
+    /* text-wrap: balance; */
+    /* text-wrap: nowrap; */
+    position: absolute;
+    color: var(--resume-line-color);
+    background-color: var(--secondary-background);
+    top: 0;
+    /* left: 100%; */
+    right: 100%;
+    border: 0.5em solid transparent;
+    border-radius: 10px;
+    margin-right: 1em;
+}
