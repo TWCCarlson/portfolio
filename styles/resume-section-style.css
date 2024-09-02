@@ -10,4 +10,5 @@
     font-size: var(--resume-section-fs);
     line-height: var(--resume-section-lh);
     padding: var(--resume-section-pad);
+    border-bottom: 2px solid var(--primary);
 }
