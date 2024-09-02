@@ -21,7 +21,8 @@ class ResumeSubSection extends HTMLElement {
         this.trigger = document.createElement('div');
         this.trigger.setAttribute('class', 'resume-subsection');
         this.trigger.defaultContent = "Default resume line text.";
-        this.expandedState = true;
+        this.expandedState = Boolean(this.getAttribute('is-expanded'));
+        
 
         // Subsection text container
         this.content = document.createElement('div');
@@ -64,7 +65,8 @@ class ResumeSubSection extends HTMLElement {
         }
 
         // Content should be visible at first
-        this.content.style.display = 'block'
+        this.content.style.display = 'block';
+        console.log(this.trigger.textContent, this.expandedState)
 
         this.detailSlot.addEventListener('slotchange', () => {
             const assignedElements = this.detailSlot.assignedElements();
@@ -75,6 +77,7 @@ class ResumeSubSection extends HTMLElement {
     }
 
     _initEvents(trigger, content) {
+        content.style.display = this.expandedState==false ? 'none' : 'block';
         trigger.addEventListener('click', () => this._toggleContent(content));
     }
 

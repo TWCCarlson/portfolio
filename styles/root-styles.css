@@ -22,8 +22,8 @@
     /* Padding sizes */
     --resume-section-pad: 0.825em 0 0 0;
     --resume-subsection-pad: 0.2em 0 0 0;
-    --resume-line-pad: 0.1em 0 0.1em 0;
-    --resume-line-detail-pad: 0.1em 0 0.1em 0;
+    --resume-line-pad: 0.1em 0 0 0;
+    --resume-line-detail-pad: 0.1em 0 1em 0;
 
     /* Gap sizes */
     /* --resume-section-gap: 0; */

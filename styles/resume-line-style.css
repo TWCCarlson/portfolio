@@ -2,6 +2,22 @@
     position: relative;
 }
 
+.resume-line-container {
+    background-color: transparent;
+}
+
+.resume-line-header {
+    color: var(--secondary);
+    flex-shrink: 0;
+    padding-right: 0.4em;
+}
+
+.resume-line-tail {
+    color: var(--primary);
+    margin-left: auto;
+    margin-right: 5px;
+}
+
 .resume-line {
     position: relative;
     z-index: 1;
@@ -12,7 +28,7 @@
     font-size: var(--resume-line-fs);
     line-height: var(--resume-line-lh);
     padding: var(--resume-line-pad);
-    background-color: var(--background);
+    background-color: transparent;
     color: var(--text);
     border: solid transparent;
     transition: 0.5s all;
@@ -21,7 +37,7 @@
 .resume-line-spacer {
     content: '';
     padding: 0.2em;
-    background-color: var(--background); 
+    background-color: transparent; 
 }
 
 .resume-line-bullet {
@@ -31,7 +47,6 @@
 
 .resume-line-bullet-char {
     transition: transform 0.3s ease;
-    /* transform-origin: center; */
 }
 
 .resume-line.active .resume-line-bullet-char {
@@ -45,10 +60,12 @@
 .resume-line-content {
     background-color: var(--secondary-background);
     color: var(--text);
-    border: 10px solid transparent;
+    border-width: 0 1.5em 0.5em 2.5em;
+    border-color: transparent;
+    border-style: solid;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     margin-right: 8px;
 }
 

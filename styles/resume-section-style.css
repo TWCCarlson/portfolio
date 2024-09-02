@@ -1,5 +1,6 @@
 .resume-section-wrapper {
     position: relative;
+    background-color: var(--background);
 }
 
 .resume-section {

@@ -30,19 +30,42 @@
         </resume-header-contact-item>
     </resume-header-contact-bar>
     <resume-section section-text="Education"><hr>
-        <resume-subsection
-            left-text="<b>CSU Sacramento</b> — MS Mechanical Engineering, GPA 4.0/4.0"
-            right-text="Jan 2024">
-        </resume-subsection>
-        <resume-subsection
-            left-text="<b>CSU Sacramento</b> — BS Mechanical Engineering, GPA 3.5/4.0"
-            right-text="May 2020">
-        </resume-subsection>
+        <resume-line 
+            indent-depth="0"
+            line-header="<b>CSU Sacramento</b> — MS Mechanical Engineering, GPA 4.0/4.0"
+            line-tail="Jan 2024"
+            font-size="subsection">
+            <resume-line-detail
+                detail-text="Specialized Coursework:">
+            </resume-line-detail>
+            <resume-line 
+                indent-depth="2"
+                line-text="Advanced Control System Design">
+            </resume-line>
+            <resume-line 
+                indent-depth="2"
+                line-text="Advanced Robot Control">
+            </resume-line>
+            <resume-line 
+                indent-depth="2"
+                line-text="Advanced Digital Control">
+            </resume-line>
+            <resume-line 
+                indent-depth="2"
+                line-text="Automated Inspection">
+            </resume-line>
+        </resume-line>
+        <resume-line 
+            indent-depth="0"
+            line-header="<b>CSU Sacramento</b> — BS Mechanical Engineering, GPA 3.5/4.0"
+            line-tail="May 2020"
+            font-size="subsection">
+        </resume-line>
     </resume-section>
     <resume-section section-text="Experience"><hr>
         <resume-subsection
             left-text="<b>CSU Sacramento Robotics Lab</b>, Lab Development & Lecturer"
-            right-text="Aug 2021 — May 2022">
+            right-text="Aug 2021 — May 2022" is-expanded="yes">
             <resume-line 
                 indent-depth="1"
                 line-text="Installed and tested Kuka, Nachi, Beckhoff, and Cognex equipment in CSU Sacramento's new robotics lab">
@@ -78,7 +101,7 @@
     <resume-section section-text="Projects"><hr>
         <resume-subsection tag="LPG"
             left-text="<b>Rocket Engine Software and Control Team Lead</b>"
-            right-text="Liquid Propulsion Group at CSUS">
+            right-text="Liquid Propulsion Group at CSUS" is-expanded="yes">
             <resume-line
                 indent-depth="1"
                 line-text="Led a team of 4 student engineers in design, assembly, and testing of the control hardware and software for a 560lbf thrust bipropellant rocket engine, culminating in a fault-free hot fire and engine validation">
@@ -115,7 +138,7 @@
         </resume-subsection>
         <resume-subsection tag="FleetBench"
             left-text="<b>FleetBench</b>"
-            right-text="Multi-Agent Simulation Application">
+            right-text="Multi-Agent Simulation Application" is-expanded="yes">
             <resume-line
                 indent-depth="1"
                 line-text="Augmented researcher efforts in multi-robot pathfinding by building a Python desktop application with dynamic UIs, algorithm documentation, statistical evaluation, and built-in algorithm extensibility">
@@ -131,7 +154,7 @@
         </resume-subsection>
         <resume-subsection tag="OSRSWiki"
             left-text="<b>Cartographer Project</b>"
-            right-text="OSRS Wiki Map Tool Contribution">
+            right-text="OSRS Wiki Map Tool Contribution" is-expanded="yes">
             <resume-line
                 indent-depth="1"
                 line-text="Enabled the automation of weekly updates to the Wiki’s Leaflet map image data set using GitHub CI/CD">
@@ -149,11 +172,18 @@
     <resume-section section-text="Skills"><hr>
         <resume-line
             indent-depth="0"
-            line-text="<b>Programming</b> — Python, MATLAB, C++, JavaScript, Tkinter, React">
+            line-header="Programming — "
+            line-text="Python, MATLAB, C++, JavaScript, Tkinter, React">
         </resume-line>
         <resume-line
             indent-depth="0"
-            line-text="<b>Software</b> — Git, GitHub CI/CD, Docker, Simulink, SolidWorks CSWA, Cognex In-Sight, TwinCAT 3, EasyEDA">
+            line-header="Software — "
+            line-text="Git, GitHub CI/CD, Docker, Simulink, SolidWorks CSWA, Cognex In-Sight, TwinCAT 3, EasyEDA">
+        </resume-line>
+        <resume-line
+            indent-depth="0"
+            line-header="Coursework — "
+            line-text="Advanced Control System Design, Automated Inspection, Advanced Robot Control, Advanced Digital Control">
         </resume-line>
     </resume-section>
 </resume-body>

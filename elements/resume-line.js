@@ -4,6 +4,7 @@ class ResumeLine extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({mode: 'open'});
+        this.style.backgroundColor = 'transparent';
 
         // Import styles to the shadow DOM
         const elementStyleLink = document.createElement('link');
@@ -26,8 +27,8 @@ class ResumeLine extends HTMLElement {
         
         // Create the content element
         this.content = document.createElement('div');
+        this.content.setAttribute('class', 'resume-line-container');
         
-
         // Prepare to load content into the slot
         this.detailSlot = document.createElement('slot');
         this.detailSlotFilled = false;
@@ -75,10 +76,44 @@ class ResumeLine extends HTMLElement {
             this.trigger.appendChild(bulletPad);
         }
 
+        
+        // If a header is requested, create it
+        const headerText = this.getAttribute('line-header')
+        this.lineHeader = document.createElement('div');
+        if (headerText) {
+            this.lineHeader.setAttribute('class', 'resume-line-header')
+            this.lineHeader.innerHTML = headerText;
+            this.trigger.appendChild(this.lineHeader);
+        }
+        
         // Create the line text
+        const lineText = this.getAttribute('line-text');
         this.lineText = document.createElement('div');
-        this.lineText.innerHTML = this.getAttribute('line-text') || this.trigger.defaultContent;
-        this.trigger.appendChild(this.lineText);
+        if (this.lineText) {
+            // this.lineText.setAttribute('class', 'resume-line');
+            // for some reason I dont use this but it works so lol
+            this.lineText.innerHTML = lineText;
+            this.trigger.appendChild(this.lineText);
+        }
+        
+        // If a tail is requested, create it
+        const tailText = this.getAttribute('line-tail')
+        this.linetail = document.createElement('div');
+        if (tailText) {
+            this.linetail.setAttribute('class', 'resume-line-tail')
+            this.linetail.innerHTML = tailText;
+            this.trigger.appendChild(this.linetail);
+        }
+        
+        // Check if custom style is requested
+        const textFontSizeOverride = this.getAttribute('font-size');
+        if (textFontSizeOverride) {
+            let textFontSizeOverride_css = `var(--resume-${textFontSizeOverride}-fs)`;
+            this.lineHeader.style.fontSize = textFontSizeOverride_css;
+            this.lineText.style.fontSize = textFontSizeOverride_css;
+            this.linetail.style.fontSize = textFontSizeOverride_css;
+            
+        }
 
         // Implement interactivity if there is slot content
         const assignedNodes = this.detailSlot.assignedNodes().filter(node => {
@@ -96,6 +131,7 @@ class ResumeLine extends HTMLElement {
                 this.lineBullet.innerHTML = ">";
                 this.lineBullet.style.fontWeight = 'bold';
                 this.lineBullet.style.color = "var(--interactable)";
+                // this.lineBullet.style.minWidth = '1em';
 
                 // Animate
                 this.wrapper.addEventListener('click', () => {
