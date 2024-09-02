@@ -95,3 +95,7 @@
     font-size: var(--resume-line-detail-fs);
     line-height: var(--resume-line-detail-lh);
 }
+
+a {
+    color: var(--interactable);
+}
