@@ -9,7 +9,7 @@
 .content-folder {
     position: relative;
     z-index: 10;
-    border-right: 3px solid var(--interactable);
+    border-right: 2px solid var(--interactable);
     background-color: var(--background);
 }
 

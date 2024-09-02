@@ -55,27 +55,28 @@ class ResumeLine extends HTMLElement {
             "2": ["•", "0.5em", "1em"]
         } /* ◦ */
 
-        // Only make the bullet point element if it should exist (not 0-indent)
-        if (depthCharMap[bulletDepth][1]!='0in') {
-            const bulletIndent = document.createElement('div');
-            bulletIndent.style.width = depthCharMap[bulletDepth][2];
-            bulletIndent.setAttribute('class', 'resume-line-bullet');
-            this.trigger.appendChild(bulletIndent);
+        // Create bullet indent
+        const bulletIndent = document.createElement('div');
+        bulletIndent.style.width = depthCharMap[bulletDepth][2];
+        bulletIndent.setAttribute('class', 'resume-line-bullet');
+        this.trigger.appendChild(bulletIndent);
 
-            this.lineBulletContainer = document.createElement('div');
-            this.lineBulletContainer.setAttribute('class', 'resume-line-bullet');
-            this.lineBullet = document.createElement('div');
-            this.lineBullet.setAttribute('class', 'resume-line-bullet-char');
-            this.lineBullet.innerHTML = depthCharMap[bulletDepth][0];
-            this.lineBulletContainer.appendChild(this.lineBullet);
-            this.trigger.appendChild(this.lineBulletContainer);
+        // Create a bullet element
+        this.lineBulletContainer = document.createElement('div');
+        this.lineBulletContainer.setAttribute('class', 'resume-line-bullet');
+        this.trigger.appendChild(this.lineBulletContainer);
 
-            const bulletPad = document.createElement('div');
-            bulletPad.style.width = depthCharMap[bulletDepth][1];
-            bulletPad.setAttribute('class', 'resume-line-bullet');
-            this.trigger.appendChild(bulletPad);
-        }
+        // Bullet itself rotates and needs its own element to do so in-place
+        this.lineBullet = document.createElement('div');
+        this.lineBullet.setAttribute('class', 'resume-line-bullet-char');
+        this.lineBullet.innerHTML = depthCharMap[bulletDepth][0];
+        this.lineBulletContainer.appendChild(this.lineBullet);
 
+        // Create space between text and bullet
+        const bulletPad = document.createElement('div');
+        bulletPad.style.width = depthCharMap[bulletDepth][1];
+        bulletPad.setAttribute('class', 'resume-line-bullet');
+        this.trigger.appendChild(bulletPad);
         
         // If a header is requested, create it
         const headerText = this.getAttribute('line-header')
@@ -121,6 +122,7 @@ class ResumeLine extends HTMLElement {
         })
         this.detailSlot.addEventListener('slotchange', () => {
             if (!this.detailSlotFilled && !(assignedNodes.length === 0)) {
+                console.log(this);
                 this.detailSlotFilled = true;
                 this.content.setAttribute('class', 'resume-line-content');
                 // If content is added to the slot, make it
@@ -131,7 +133,8 @@ class ResumeLine extends HTMLElement {
                 this.lineBullet.innerHTML = ">";
                 this.lineBullet.style.fontWeight = 'bold';
                 this.lineBullet.style.color = "var(--interactable)";
-                // this.lineBullet.style.minWidth = '1em';
+                this.lineBullet.style.width = "0.5em";
+                bulletPad.style.width = "0.5em";
 
                 // Animate
                 this.wrapper.addEventListener('click', () => {
