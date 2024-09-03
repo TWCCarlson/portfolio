@@ -83,6 +83,7 @@
     font-size: var(--resume-line-detail-fs);
     line-height: var(--resume-line-detail-lh);
     padding: var(--resume-line-detail-pad);
+    text-align: center;
 }
 
 .resume-line-detail-video {

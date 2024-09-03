@@ -1,0 +1,75 @@
+.resume-preamble {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    background-color: var(--secondary-background);
+    color: var(--text);
+    text-align: center;
+    font-size: var(--resume-subsection-fs);
+    line-height: var(--resume-subsection-lh);
+    border-radius: 10px;
+    width: 85rem;
+    opacity: 1;
+    overflow: hidden;
+    max-height: 50em;
+    box-sizing: border-box;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+}
+
+.resume-preamble.minimize {
+    max-height: 2px;
+    padding: 0;
+}
+
+.resume-preamble.vanish {
+    content: '';
+    opacity: 0;
+    max-height: 0px;
+}
+
+.resume-preamble-button {
+    border-right: 2px solid var(--interactable);
+    background-color: var(--background);
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    font-size: var(--resume-section-fs);
+    line-height: var(--resume-section-lh);
+    padding: 0.5em;
+    padding-right: 1em;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+}
+
+.resume-preamble-button::after {
+    content: '';
+    display: inline;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(to left, var(--interactable) 80%, transparent 100%);
+    background-size: 200% 100%;
+    background-position: 0 bottom;
+    transition: transform 0.5s ease, background-position 0.5s ease;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.resume-preamble-button:hover::after {
+    content: '';
+    display: inline;
+    transform: scaleX(1);
+    background-position: 0 bottom;
+}
+
+.resume-preamble-button .resume-line-bullet-char {
+    color: var(--interactable);
+}
+
+.resume-preamble-button:hover .resume-line-bullet-char {
+    transform: rotateZ(90deg);
+}

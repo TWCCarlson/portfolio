@@ -36,6 +36,18 @@
     /* --resume-line-detail-gap: 0; */
 }
 
+/* @media (prefers-color-scheme: dark) {
+    :root {
+        --text: hsla(180, 9%, 98%, 0.87);
+        --interactable: #42eec1;
+        --background: #141414;
+        --primary: #8364ff;
+        --secondary: #80c1ff;
+        --secondary-background: rgba(62, 71, 108, 0.301);
+        --name: #8364ff
+    }
+} */
+
 :root.dark-mode { 
     --text: hsla(180, 9%, 98%, 0.87);
     --interactable: #42eec1;

@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body class="body">
-<resume-body>
+<resume-header class="resume-header">
     <resume-header-name myname="Thomas W. C. Carlson"></resume-header-name>
     <resume-header-contact-bar>
         <resume-header-contact-item 
@@ -29,36 +29,48 @@
             contact-text="github.com/TWCCarlson">
         </resume-header-contact-item>
     </resume-header-contact-bar>
+</resume-header>
+<resume-preamble>
+    <img src="finger.jpg" height="300">
+    <p>Hi, I'm Thomas</p>
+    <p>I'm a Mechanical and Software Engineer with a passion for control, automation, and creating useful tools to support amazing projects in the robotics, software, and aerospace industries.</p>
+    <p>You can find additional detail by clicking buttons like this one:</p>
+    <resume-preamble-button></resume-preamble-button>
+</resume-preamble>
+<resume-body>
     <resume-section section-text="Education">
         <resume-line 
         indent-depth="0"
         line-header="<b>CSU Sacramento</b> — MS Mechanical Engineering, GPA 4.0/4.0"
         line-tail="Jan 2024"
         font-size="subsection">
-        <click-me></click-me>
-        <resume-line-detail
-            detail-text="Specialized Coursework:">
-        </resume-line-detail>
-            <resume-line 
-                indent-depth="2"
-                line-text="Advanced Control System Design — with particular focus on LQR Control">
-            </resume-line>
-            <resume-line 
-                indent-depth="2"
-                line-text="Advanced Robot Control — with a <a href='https://www.youtube.com/watch?v=opUTSEN3Ask'>solo Mobile Robot design project</a>">
-            </resume-line>
-            <resume-line 
-                indent-depth="2"
-                line-text="Advanced Digital Control — with a <a href='projects/Thomas_Carlson_EEE246_Final_Project.pdf'>solo LQR Airplane Modeling Project</a>">
-            </resume-line>
-            <resume-line 
-                indent-depth="2"
-                line-text="Machine Vision — with a <a href='projects/Thomas_Carlson_EEE221_Final_Project.pdf'>solo research project into Robotic Vision Techniques</a>">
-            </resume-line>
-            <resume-line 
-                indent-depth="2"
-                line-text="Automated Inspection — study of sensors, perceptrons, and defect detection">
-            </resume-line>
+        <resume-line
+            indent-depth="0"
+            line-text="Specialized Coursework">
+        </resume-line>
+        <resume-line 
+            indent-depth="2"
+            line-text="Advanced Control System Design — with particular focus on LQR Control">
+        </resume-line>
+        <resume-line 
+            indent-depth="2"
+            line-text="Advanced Robot Control — with a <a href='https://www.youtube.com/watch?v=opUTSEN3Ask'>
+                        solo Mobile Robot design project</a>">
+        </resume-line>
+        <resume-line 
+            indent-depth="2"
+            line-text="Advanced Digital Control — with a <a href='projects/Thomas_Carlson_EEE246_Final_Project.pdf'>
+                        solo LQR Airplane Modeling Project</a>">
+        </resume-line>
+        <resume-line 
+            indent-depth="2"
+            line-text="Machine Vision — with a <a href='projects/Thomas_Carlson_EEE221_Final_Project.pdf'>
+                        solo research project into Robotic Vision Techniques</a>">
+        </resume-line>
+        <resume-line 
+            indent-depth="2"
+            line-text="Automated Inspection — study of sensors, perceptrons, and defect detection">
+        </resume-line>
         </resume-line>
         <resume-line 
             indent-depth="0"
@@ -67,10 +79,19 @@
             font-size="subsection">
             <resume-line 
                 indent-depth="0"
-                line-text="Undergraduate capstone project involved the machine design, software design, and electrical engineering of a CNC tube bending machine. The objective was to be able to produce arbitrary-angled bends according to a pre-programmed sequence. Unfortunately due to COVID-19 manufacturing was shut down and the project remains mostly theoretical. However, software simulation of the control and sequence development was done. Read the <a href='projects/Senior_Project_Report.pdf'>final report here.</a>">
+                line-text="My undergraduate capstone project involved the machine design, software design, and electrical 
+                            engineering of a CNC tube bending machine. The objective was to produce 
+                            angled bends according to a programmed sequence. Due to COVID-19 manufacturing 
+                            was shut down and the project remains mostly theoretical. However, I performed a software 
+                            simulation of the machine's instructions and output to visualize the goals. Read the 
+                            <a href='projects\SENIOR_PROJECT\Senior_Project_Report.pdf'>final report here.</a>">
             </resume-line>
             <resume-line-detail 
-                image-url="projects\MATLAB_wyvG53npy3.gif">
+                image-url="projects\SENIOR_PROJECT\Tube_Preview.gif">
+            </resume-line-detail>
+            <resume-line-detail
+                detail-text="Rendering of a tube after 4 programmed bends. Purple indicates tube in the machine feed, 
+                                black indicates already bent tubing, and red is the most recently commanded bend.">
             </resume-line-detail>
         </resume-line>
     </resume-section>
@@ -197,6 +218,7 @@
     </resume-section>
 </resume-body>
 <script type="module" src="./elements/click-me.js"></script>
+<script type="module" src="./elements/resume-preamble.js"></script>
 <script type="module" src="./elements/resume-section.js"></script>
 <script type="module" src="./elements/resume-subsection.js"></script>
 <script type="module" src="./elements/resume-line.js"></script>

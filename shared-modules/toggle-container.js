@@ -29,7 +29,6 @@ function changeHeaderClass(element) {
 }
 
 function toggleContent(content) {
-    console.log("CLICK", content.classList);
     // Scroll to the content after the transition
     content.addEventListener('transitionend', (event) => {
         onTransitionEnd(event, content);

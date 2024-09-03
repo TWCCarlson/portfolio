@@ -19,6 +19,8 @@ class ResumeLine extends HTMLElement {
         // Placing element
         this.wrapper = document.createElement('div');
         this.wrapper.setAttribute('class', 'resume-line-wrapper');
+        const passedClasses = this.getAttribute('wrapper-class');
+        this.wrapper.classList.add(passedClasses);
 
         // Pop-up trigger element
         this.trigger = document.createElement('div');
@@ -122,7 +124,6 @@ class ResumeLine extends HTMLElement {
         })
         this.detailSlot.addEventListener('slotchange', () => {
             if (!this.detailSlotFilled && !(assignedNodes.length === 0)) {
-                console.log(this);
                 this.detailSlotFilled = true;
                 this.content.setAttribute('class', 'resume-line-content');
                 // If content is added to the slot, make it clickable to unfold
