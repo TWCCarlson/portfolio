@@ -1,4 +1,4 @@
-export function elementTogglesContent(element, content) {
+export function elementTogglesContent(wrapper, element, content) {
     // This function gives the ability to smoothly unfold content to an element
     // And the ability to re-fold when the content is clicked
 
@@ -8,21 +8,28 @@ export function elementTogglesContent(element, content) {
     styleLink.href = './shared-modules/toggle-container-style.css';
     styleLink.type = 'text/css';
 
-    // Create container to animate the folding
-    const wrapper = document.createElement('div');
-    wrapper.setAttribute('class', 'foldable-content-wrapper');
-    
-    element.addEventListener('click', () => toggleContent(wrapper));
-    content.addEventListener('click', () => toggleContent(wrapper));
-    element.parentElement.classList.add('content-folder')
-    
-    // element.appendChild(wrapper);
-    wrapper.appendChild(styleLink);
-    wrapper.appendChild(content);
-    return wrapper
+    // Create a subcontainer for evaluating natural height
+    const foldWrapper = document.createElement('div');
+    foldWrapper.setAttribute('class', 'foldable-content-wrapper');
+    foldWrapper.appendChild(content);
+    foldWrapper.appendChild(styleLink);
+
+    // Add class and events
+    wrapper.classList.add('content-folder')
+    wrapper.addEventListener('click', () => changeHeaderClass(element));
+    wrapper.addEventListener('click', () => toggleContent(foldWrapper));
+
+    // Attach content to wrapper
+    wrapper.appendChild(foldWrapper);
+}
+
+function changeHeaderClass(element) {
+    element.classList.toggle('active');
+    element.classList.toggle('resume-line-expanded');
 }
 
 function toggleContent(content) {
+    console.log("CLICK", content.classList);
     // Scroll to the content after the transition
     content.addEventListener('transitionend', (event) => {
         onTransitionEnd(event, content);

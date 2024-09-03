@@ -125,9 +125,9 @@ class ResumeLine extends HTMLElement {
                 console.log(this);
                 this.detailSlotFilled = true;
                 this.content.setAttribute('class', 'resume-line-content');
-                // If content is added to the slot, make it
-                const contentWrapper = elementTogglesContent(this.trigger, this.content);
-                this.wrapper.appendChild(contentWrapper);
+                // If content is added to the slot, make it clickable to unfold
+                elementTogglesContent(this.wrapper, this.trigger, this.content);
+                // this.wrapper.appendChild(contentWrapper);
 
                 // Update the line bullet
                 this.lineBullet.innerHTML = ">";
@@ -135,12 +135,6 @@ class ResumeLine extends HTMLElement {
                 this.lineBullet.style.color = "var(--interactable)";
                 this.lineBullet.style.width = "0.5em";
                 bulletPad.style.width = "0.5em";
-
-                // Animate
-                this.wrapper.addEventListener('click', () => {
-                    this.trigger.classList.toggle('active');
-                    this.trigger.classList.toggle('resume-line-expanded');
-                })
             }
         });
     }
