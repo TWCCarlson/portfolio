@@ -11,4 +11,5 @@
     line-height: var(--resume-section-lh);
     padding: var(--resume-section-pad);
     border-bottom: 2px solid var(--primary);
+    margin-bottom: 0.3em;
 }

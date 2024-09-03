@@ -24,8 +24,8 @@
     --resume-line-detail-lh: 1.5em;
 
     /* Padding sizes */
-    --resume-section-pad: 0.825em 0 0 0;
-    --resume-subsection-pad: 0.2em 0 0 0;
+    --resume-section-pad: 0.5em 0 0 0;
+    --resume-subsection-pad: 0 0 0 0;
     --resume-line-pad: 0.1em 0 0 0;
     --resume-line-detail-pad: 0.1em 0 0.1em 0;
 
