@@ -1,11 +1,15 @@
 :root {
     /* Colors */
-    --text: hsla(180, 9%, 98%, 0.87);
-    --interactable: #42eec1;
-    --background: #141414;
-    --primary: #8364ff;
-    --secondary: #80c1ff;
-    --secondary-background: rgba(62, 71, 108, 0.301);
+    --text: black;
+    --background: rgb(245, 245, 245);
+    /* --primary: #213fc9; */
+    --primary: rgb(161, 24, 0);
+    --secondary: black;
+    /* --interactable: rgb(161, 24, 0); */
+    --interactable: #213fc9;
+    --secondary-background: rgb(238, 228, 228);
+    --name: black;
+
 
     /* Font sizes */
     --resume-section-fs: 2.2rem;
@@ -23,11 +27,21 @@
     --resume-section-pad: 0.825em 0 0 0;
     --resume-subsection-pad: 0.2em 0 0 0;
     --resume-line-pad: 0.1em 0 0 0;
-    --resume-line-detail-pad: 0.1em 0 1em 0;
+    --resume-line-detail-pad: 0.1em 0 0.1em 0;
 
     /* Gap sizes */
     /* --resume-section-gap: 0; */
     --resume-subsection-gap: 10px;
     /* --resume-line-gap: 0; */
     /* --resume-line-detail-gap: 0; */
+}
+
+:root.dark-mode { 
+    --text: hsla(180, 9%, 98%, 0.87);
+    --interactable: #42eec1;
+    --background: #141414;
+    --primary: #8364ff;
+    --secondary: #80c1ff;
+    --secondary-background: rgba(62, 71, 108, 0.301);
+    --name: hsla(180, 9%, 98%, 0.87)
 }

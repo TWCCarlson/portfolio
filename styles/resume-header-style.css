@@ -1,6 +1,6 @@
 .resume-header-name {
     background-color: var(--background);
-    color: var(--primary);
+    color: var(--name);
     text-align: center;
     font-size: 4rem;
 }

@@ -179,6 +179,7 @@ class ResumeLineDetail extends HTMLElement {
         if (text) {
             const textContainer = document.createElement('div');
             textContainer.setAttribute('class', 'resume-line-detail-text');
+            textContainer.innerHTML = text;
             this.wrapper.appendChild(textContainer);
         }
 
