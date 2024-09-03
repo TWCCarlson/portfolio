@@ -33,23 +33,10 @@ class ResumeSection extends HTMLElement {
         this.shadowRoot.append(rootStyleLink);
         this.shadowRoot.append(elementStyleLink);
         this.subcontent.appendChild(slot);
-
-        // Listen to mouse events
-        this._initEvents(this.content, this.subcontent);
     }
 
     connectedCallback() {
         this.content.textContent = this.getAttribute('section-text') || this.content.defaultContent;
-    }
-
-    _initEvents(content, subcontent) {
-        // Default to open
-        subcontent.style.display = 'block';
-        content.addEventListener('click', () => this._toggleContent(subcontent));
-    }
-
-    _toggleContent(content) {
-        content.style.display = content.style.display=='block'? 'none' : 'block'
     }
 }
 
