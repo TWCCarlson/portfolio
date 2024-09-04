@@ -50,7 +50,7 @@ class ResumeLine extends HTMLElement {
 
     connectedCallback() {
         // Create the line's content
-        const bulletDepth = this.getAttribute('indent-depth');
+        const bulletDepth = this.getAttribute('indent-depth') || "0";
         const depthCharMap = {
             "0": ["", "0em", "0em"],
             "1": ["•", "0.5em", "0em"],

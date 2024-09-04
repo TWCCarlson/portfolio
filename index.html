@@ -31,7 +31,7 @@
     </resume-header-contact-bar>
 </resume-header>
 <resume-preamble>
-    <img src="pfp.jpg" height="300" style="border-radius: 50%">
+    <img src="./resume-images/pfp.jpg" height="300" style="border-radius: 50%; border: 4px solid var(--primary)">
     <p>Hi, I'm Thomas</p>
     <p>I'm a Mechanical and Software Engineer with a passion for control, automation, and creating useful tools to support amazing projects in the robotics, software, and aerospace industries.</p>
     <p>You can find additional detail by clicking buttons like this one:</p>
@@ -54,22 +54,28 @@
         </resume-line>
         <resume-line 
             indent-depth="2"
-            line-text="Advanced Robot Control — with a <a href='https://www.youtube.com/watch?v=opUTSEN3Ask'>
+            line-text="Advanced Robot Control — with a <a href='https://www.youtube.com/watch?v=opUTSEN3Ask' target='_blank'>
                         solo Mobile Robot design project</a>">
         </resume-line>
         <resume-line 
             indent-depth="2"
-            line-text="Advanced Digital Control — with a <a href='projects/Thomas_Carlson_EEE246_Final_Project.pdf'>
+            line-text="Advanced Digital Control — with a <a href='projects/Thomas_Carlson_EEE246_Final_Project.pdf' target='_blank'>
                         solo LQR Airplane Modeling Project</a>">
         </resume-line>
         <resume-line 
             indent-depth="2"
-            line-text="Machine Vision — with a <a href='projects/Thomas_Carlson_EEE221_Final_Project.pdf'>
+            line-text="Machine Vision — with a <a href='projects/Thomas_Carlson_EEE221_Final_Project.pdf' target='_blank'>
                         solo research project into Robotic Vision Techniques</a>">
         </resume-line>
         <resume-line 
             indent-depth="2"
             line-text="Automated Inspection — study of sensors, perceptrons, and defect detection">
+        </resume-line>
+        <resume-line
+            indent-depth="2"
+            line-text="A special problems semester in which I <a href='projects/Stereoscopic_Calibration.pdf' target='_blank'>
+                        investigated the needs of stereoscopic vision systems</a> as part of the groundwork for an 
+                        underwater robot's gripper system.">
         </resume-line>
         </resume-line>
         <resume-line 
@@ -84,7 +90,7 @@
                             angled bends according to a programmed sequence. Due to COVID-19 manufacturing 
                             was shut down and the project remains mostly theoretical. However, I performed a software 
                             simulation of the machine's instructions and output to visualize the goals. Read the 
-                            <a href='projects\SENIOR_PROJECT\Senior_Project_Report.pdf'>final report here.</a>">
+                            <a href='projects\SENIOR_PROJECT\Senior_Project_Report.pdf' target='_blank'>final report here.</a>">
             </resume-line>
             <resume-line-detail 
                 image-url="projects\SENIOR_PROJECT\Tube_Preview.gif">
@@ -102,20 +108,10 @@
             <resume-line 
                 indent-depth="1"
                 line-text="Installed and tested Kuka, Nachi, Beckhoff, and Cognex equipment in CSU Sacramento's new robotics lab">
-                <resume-line-detail
-                    detail-text="sample detail text"
-                    video-url="https://www.youtube.com/watch?v=Zsz5QhzACJs"
-                    article-url="projects/article.html">
-                </resume-line-detail>
             </resume-line>
             <resume-line
                 indent-depth="1"
-                line-text="Lectured and managed a safe lab space, guiding groups of up to 15 students at a time">
-                <resume-line-detail
-                    detail-text="sample detail text"
-                    video-url="https://www.youtube.com/watch?v=Zsz5QhzACJs"
-                    article-url="projects/article.html">
-                </resume-line-detail>
+                line-text="Lectured and managed a safe lab space, guiding groups of up to 15 students at a time in:">
             </resume-line>
             <resume-line
                 indent-depth="2"
@@ -128,6 +124,9 @@
             <resume-line
                 indent-depth="2"
                 line-text="Inspecting part quality using machine vision with Cognex cameras and In-Sight software tools">
+                <resume-line-detail
+                    video-url='<iframe width="560" height="315" src="https://www.youtube.com/embed/lJtFv8P2JuY?si=nPOwxj07avABF_JD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'>
+                </resume-line-detail>
             </resume-line>
         </resume-subsection>
     </resume-section>
@@ -137,36 +136,100 @@
             right-text="Liquid Propulsion Group at CSUS" is-expanded="yes">
             <resume-line
                 indent-depth="1"
-                line-text="Led a team of 4 student engineers in design, assembly, and testing of the control hardware and software for a 560lbf thrust bipropellant rocket engine, culminating in a fault-free hot fire and engine validation">
+                line-text="Led a team of 4 student engineers in design, assembly, and testing of the control hardware 
+                            and software for a 560lbf thrust bipropellant rocket engine, culminating in a fault-free 
+                            hot fire and engine validation">
+                <resume-line
+                    line-text="The Liquid Propulsion Group was the first collegiate rocketry team to deliver the hot-fire
+                                of a rocket engine in the Sacramento area. As a lead of two teams in the project, I personally
+                                oversaw between 3–8 student engineers in the development of the soft- and hard-ware components
+                                necessary to make our shared dream of a clean run happen on December 17th, 2022.">
+                </resume-line>
                 <resume-line-detail
-                    detail-text="sample detail text"
-                    video-url="https://www.youtube.com/watch?v=Zsz5QhzACJs"
+                    video-url="https://www.youtube.com/watch?v=cUY1LRM0F18"
                     article-url="projects/article.html">
                 </resume-line-detail>
             </resume-line>
             <resume-line
                 indent-depth="1"
-                line-text="Managed team resources and talent using Kanban boards, building a team knowledge Wiki, managing part inventory, coordinating test logistics, and leading frequent design meetings and work sessions">
+                line-text="Managed team resources and talent using Kanban boards, building a team knowledge Wiki, 
+                            managing part inventory, coordinating test logistics, and leading frequent design meetings 
+                            and work sessions">
+                <resume-line
+                    line-text="With such a large scale project I knew it was critical to have simple and useful systems
+                                in place to keep track of all the moving parts and tasks. To this end I leveraged our 
+                                shared Notion workspace's tools to build easy-to-reference lists of information.">
+                </resume-line>
+                <resume-line-detail
+                    image-url="./resume-images/BOM.png">
+                </resume-line-detail>
+                <resume-line
+                    line-text="This effort was especially useful when rapid changes needed to be made during the 
+                                electronics prototype phases, and in the final pack check before the 6 hour journey to
+                                the Mojave desert test site.">
+                </resume-line>
+                <resume-line-detail
+                    article-url="projects/article.html">
+                </resume-line-detail>
             </resume-line>
             <resume-line
                 indent-depth="1"
-                line-text="Collected data from 12 sensors and controlled 7 valves using embedded C++ code on Arduino controllers managed by a Raspberry Pi onboard computer, all operated via a RESTful API from a safe operating distance">
+                line-text="Collected data from 12 sensors and controlled 7 valves using embedded C++ code on Arduino 
+                            controllers managed by a Raspberry Pi onboard computer, all operated via a RESTful API from 
+                            a safe operating distance">
+                <resume-line-detail
+                    image-url="resume-images/sensor_layout.png">
+                </resume-line-detail>
+                <resume-line
+                    line-text="The sensor array for the STINGER engine consisted of:
+                                <ul>
+                                    <li>5 Pressure Transducers</li>
+                                    <li>5 Thermocouples</li>
+                                    <li>1 Thrust sensor</li>
+                                    <li>1 Flowmeter</li>
+                                </ul>
+                                While the actuation system was made of 7 pressure-controlling valves which needed to be 
+                                held in specific states during tests.">
+                </resume-line>
+                <resume-line
+                    line-text="All this data and control needed to be managed from a safe operating distance in a bunker.
+                                We opted to use a stable wired ethernet connection to connect a Raspberry Pi and the operator PC.
+                                The Raspberry Pi was itself in charge of managing two Arduino Microcontrollers over USB.">
+                </resume-line>
+                <resume-line-detail
+                    article-url="projects/article.html">
+                </resume-line-detail>
             </resume-line>
             <resume-line
                 indent-depth="1"
-                line-text="Captured, stored, exported, and analyzed all testing data used in engine performance iteration and validation using serial communications, a Python-Redis database, and Excel statistical tools">
+                line-text="Captured, stored, exported, and analyzed all testing data used in engine performance iteration 
+                            and validation using serial communications, a Python-Redis database, and Excel statistical tools">
             </resume-line>
             <resume-line
                 indent-depth="1"
-                line-text="Increased the rate of testing and iteration by developing a React UI with Plotly graphs to visualize live data">
+                line-text="Increased the rate of testing and iteration by developing a React UI with Plotly graphs to 
+                            visualize live data">
             </resume-line>
             <resume-line
                 indent-depth="1"
-                line-text="Eliminated dangerous manual control modes of the engine by creating a MATLAB UI to automate commands">
+                line-text="Eliminated dangerous manual control modes by creating a MATLAB UI to automate commands">
+                <resume-line-detail
+                    image-url="./resume-images/matlab_ui.png"
+                    detail-text="<a href='./resume-images/matlab_ui_sequence_testing.gif' target='_blank'>See it in action</a>"
+                    article-url="./projects/article.html">
+                </resume-line-detail>
             </resume-line>
             <resume-line
                 indent-depth="1"
-                line-text="Prevented at least two modes of failure that arose during transport and setup of the test stand by writing thorough documentation, stand setup procedures, Docker containers, and hardware continuity checks">
+                line-text="Prevented at least two modes of failure that arose during transport and setup of the test stand 
+                            by creating thorough documentation, stand setup procedures, Docker containers, and continuity checks">
+                <resume-line
+                    line-text="During transport, internal wires of the electronics box's ethernet wire became disconnected 
+                                due to a stiff wire and poor road conditions. Additionally, one thermocouple connector's 
+                                leads were soldered in reverse order. Using a combination of the live UI to pre-test 
+                                the sensors and thorough continuity check documentation, both errors were caught ahead 
+                                of time and fixed before the main test started.">
+                </resume-line>
             </resume-line>
         </resume-subsection>
         <resume-subsection tag="FleetBench"
