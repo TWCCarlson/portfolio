@@ -243,15 +243,99 @@
             right-text="Multi-Agent Simulation Application" is-expanded="yes">
             <resume-line
                 indent-depth="1"
-                line-text="Augmented researcher efforts in multi-robot pathfinding by building a Python desktop application with dynamic UIs, algorithm documentation, statistical evaluation, and built-in algorithm extensibility">
+                line-text="Augmented researcher efforts in multi-robot pathfinding by building a Python desktop application 
+                            with dynamic UIs, algorithm documentation, statistical evaluation, and built-in algorithm 
+                            extensibility">
+                <resume-line
+                    line-text="When performing background research in robotics I learned a lot about the field of 
+                                pathfinding for groups, or fleets, of robots. The problems in this space are extremely complex
+                                and often become impossible to compute, much less understand due to the sheer number of 
+                                branching possibilities. As a result, these seems to be no provably optimal solution.">
+                </resume-line>
+                <resume-line
+                    line-text="During my research I noted several weaknesses in the field that I felt I could contribute to improving:
+                                <ul>
+                                    <li>Proposed solutions are often developed independently, and not easy to compare<ul>
+                                        <li>There are numerous solution forms (Decentralized, Centralized, ML, more)</li>
+                                        <li>Implementations are in many different languages (C++, C, Python are common)</li>
+                                        <li>There is a lack of standard test cases to perform comparisons</li>
+                                        <li>There seems to be a lack of meta studies making mass comparisons</li></ul></li>
+                                    <li>Visualization of the search space complexities is rare</li>
+                                    <li>Most work is not built to be extended and is not new-user friendly</li>
+                                </ul>">
+                </resume-line>
+                <resume-line
+                    line-text="FleetBench is an application which aims to visualize a wide range of centralized multi-agent
+                                pathfinding algorithms as they attempt to solve 'problems' set by the user within FleetBench.">
+                </resume-line>
+                <resume-line-detail
+                    image-url="./resume-images/FleetBenchSearch.png">
+                </resume-line-detail>
+                <resume-line
+                    line-text="It was designed with extensibility in mind—the algorithms are treated as plug-ins with
+                                a custom API (thoroughly documented in the thesis) rather than as part of the core codebase.">
+                </resume-line>
+                <resume-line
+                    line-text="Being a prototype, there is certainly much more work to be done, including porting to a more
+                                performant C++ implementation and expanding visualization capabilities.">
+                </resume-line>
+                <resume-line-detail
+                    article-url="https://csu-csus.primo.exlibrisgroup.com/discovery/delivery?vid=01CALS_USL:ResearchRepository&repId=12275825030001671#13275825020001671">
+                </resume-line-detail>
             </resume-line>
             <resume-line
                 indent-depth="1"
                 line-text="Implemented and simulated pathfinding algorithms (Dijkstra, Token Passing, and Windowed Hierarchical A*)">
+                <resume-line-detail
+                    image-url="./resume-images/FleetBenchAlgorithms.png">
+                </resume-line-detail>
+                <resume-line
+                    line-text="As a proof of concept that the application can be useful I compiled a small list of algorithms 
+                                to test:
+                                <ul>
+                                    <li>A* (single agent testing mode)</li>
+                                    <li>Local Repair A*</li>
+                                    <li>Cooperative A*</li>
+                                    <li>Hierarchical Cooperative A* using Reverse-Resumable A*</li>
+                                    <li>Windowed Hierarchical Cooperative A*</li>
+                                    <li>Token Passing</li>
+                                    <li>Token Passing with Task Swaps</li>
+                                </ul>">
+                </resume-line>
+                <resume-line
+                    line-text="Using FleetBench I was able to confirm intuitive notions of the behaviors of each of these
+                                algorithms and identify edge cases in which each could run into significant difficulties,
+                                confirming the viability of the workflow.">
+                </resume-line>
+                <resume-line-detail
+                    image-url="./resume-images/FleetBenchStateMachine.png">
+                </resume-line-detail>
+                <resume-line
+                    line-text="Such an improvement in setup time, simplicity, and standardization of testing is useful to engineers 
+                                seeking to implement fleet robotics (Amazon Warehouses, human-robot-integrated workspaces, more).">
+                </resume-line>
+                <resume-line-detail
+                    article-url="https://csu-csus.primo.exlibrisgroup.com/discovery/delivery?vid=01CALS_USL:ResearchRepository&repId=12275825030001671#13275825020001671">
+                </resume-line-detail>
             </resume-line>
             <resume-line
                 indent-depth="1"
                 line-text="Visualized complex system behaviors using a custom graphics API which managed Tkinter UI elements">
+                <resume-line-detail
+                    image-url="./resume-images/FleetBenchPathfinding.png"
+                    detail-text="Two agents seek paths that would collide. Re-routing of one agent is executed.">
+                </resume-line-detail>
+                <resume-line
+                    line-text="Pathfinding for a single agent with unchanging environment is a fairly trivial task, particularly
+                                if the viewer understands the underlying concepts of A*. The challenge grows significantly
+                                with an increased number of agents, as the evaluation of viable paths has to respect a new
+                                dimension: time. Finding simple representations of conflicts happening in the future states
+                                of an environment remains difficult, but FleetBench makes available a flexible graphics API
+                                which is immensely helpful in debugging and validation of behaviors.">
+                </resume-line>
+                <resume-line-detail
+                    article-url="https://csu-csus.primo.exlibrisgroup.com/discovery/delivery?vid=01CALS_USL:ResearchRepository&repId=12275825030001671#13275825020001671">
+                </resume-line-detail>
             </resume-line>
         </resume-subsection>
         <resume-subsection tag="OSRSWiki"

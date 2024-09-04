@@ -169,6 +169,16 @@ class ResumeLineDetail extends HTMLElement {
     }
 
     connectedCallback() {
+        // Image
+        const imageURL = this.getAttribute('image-url');
+        if (imageURL) {
+            // Container
+            const imContainer = document.createElement('img');
+            imContainer.src=imageURL;
+            imContainer.setAttribute('class', 'resume-line-detail-image')
+            this.wrapper.appendChild(imContainer);
+        }
+
         // Text content of the line details
         const text = this.getAttribute('detail-text');
         if (text) {
@@ -196,15 +206,6 @@ class ResumeLineDetail extends HTMLElement {
             }
         }
         
-        // Image
-        const imageURL = this.getAttribute('image-url');
-        if (imageURL) {
-            // Container
-            const imContainer = document.createElement('img');
-            imContainer.src=imageURL;
-            imContainer.setAttribute('class', 'resume-line-detail-image')
-            this.wrapper.appendChild(imContainer);
-        }
 
         // Read more style link to another page on the site
         const articleURL = this.getAttribute('article-url');
@@ -216,6 +217,7 @@ class ResumeLineDetail extends HTMLElement {
             // Hyperlink
             const readMore = document.createElement('a');
             readMore.href = articleURL;
+            readMore.target = '_blank';
             readMore.innerHTML = "Read More >>";
             readMore.setAttribute('class', 'resume-line-detail-readmore');
             urlContainer.appendChild(readMore)
