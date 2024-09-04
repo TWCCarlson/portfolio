@@ -38,12 +38,12 @@ class ResumePreamble extends HTMLElement {
         this.wrapper.addEventListener('click', () => {
             if (!this.resumeRevealed) {
                 this.resumeRevealed = true;
-
+                
                 // Transition timings
                 const resumeBodyRevealTime = 2.5;
                 const preambleShrinkTime = 1;
                 const preambleVanishTime = 0.5;
-
+                
                 // Reveal the resume body
                 const resumeBodyWrapper = document.querySelector('resume-body');
                 const resumeShadow = resumeBodyWrapper.shadowRoot
@@ -67,6 +67,7 @@ class ResumePreamble extends HTMLElement {
             }
         })
     }
+
 }
 customElements.define('resume-preamble', ResumePreamble);
 

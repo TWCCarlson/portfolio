@@ -48,6 +48,15 @@ function toggleContent(content) {
 function onTransitionEnd(event, content) {
     content.removeEventListener('transitionend', onTransitionEnd)
     if (content.style.maxHeight !== '0px') {
-        content.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+        // content.scrollIntoView({behavior: 'smooth', block: 'nearest'});
     }
+
+    // Update resume body visible height
+    const resumeBodyWrapper = document.querySelector('resume-body');
+    const resumeShadow = resumeBodyWrapper.shadowRoot;
+    const resumeBody = resumeShadow.querySelector('.resume-body');
+    let transition = resumeBody.style.transition;
+    resumeBody.style.transition = 'none';
+    resumeBody.style.height = `${resumeBody.scrollHeight}px`;
+    resumeBody.style.transition = transition;
 }
