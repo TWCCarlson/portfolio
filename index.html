@@ -33,9 +33,9 @@
 <resume-preamble>
     <img src="./resume-images/pfp.jpg" height="400" style="border-radius: 50%; border: 4px solid var(--primary)">
     <p style="font-size: 3rem">Hi, I'm Thomas</p>
-    <p>I'm a Mechanical and Software Engineer with a passion for control, automation, and creating useful tools to support 
+    <p>I am a Mechanical and Software Engineer with a passion for control, automation, and creating useful tools to support 
         amazing projects in the robotics, software, and aerospace industries.</p>
-    <p>You can find additional detail in my resume by clicking buttons like this one</p>
+    <p>You can find additional detail by clicking on lines of my resume like this one:</p>
     <resume-preamble-button></resume-preamble-button>
 </resume-preamble>
 <resume-body>
@@ -285,7 +285,7 @@
             </resume-line>
             <resume-line
                 indent-depth="1"
-                line-text="Implemented and simulated pathfinding algorithms (Dijkstra, Token Passing, and Windowed Hierarchical A*)">
+                line-text="Implemented and tested pathfinding algorithms (Dijkstra, Token Passing, and Windowed Hierarchical A*)">
                 <resume-line-detail
                     image-url="./resume-images/FleetBenchAlgorithms.png">
                 </resume-line-detail>
@@ -344,14 +344,57 @@
             <resume-line
                 indent-depth="1"
                 line-text="Enabled the automation of weekly updates to the Wiki’s Leaflet map image data set using GitHub CI/CD">
+                <resume-line
+                    line-text="The process of producing map tiles for the Kartographer extension used on modern Wikipedias
+                                requires processing files dumped directly from the game cache, written in Java. The maintainers
+                                of the wiki prefer to use Python for scripting purposes, and MediaWikis have their own
+                                requirements in terms of format and upload.">
+                </resume-line>
+                <resume-line
+                    line-text="The existing techniques required manual labor on maintainers' personal machines and demanded
+                                a staggering 29GB of RAM to execute. A comparable GitHub Runner would be expensive for a
+                                user-funded organization like the Wiki.">
+                </resume-line>
+                <resume-line
+                    line-text="I sought other strategies, benchmarking Pillow, NumPy, OpenCV, and Pyvips and evaluating
+                                their capabilities. In the end I found a significantly better solution.">
+                </resume-line>
+                <resume-line-detail
+                    detail-text="<a href='https://oldschool.runescape.wiki/w/User:FawltyPlay' target='_blank'>You can view the live output here</a>">
+                </resume-line-detail>
             </resume-line>
             <resume-line
                 indent-depth="1"
                 line-text="Reduced map generation time by 54% via overhauling the image processing strategy to use the Pyvips library">
+                <resume-line
+                    line-text="Pyvips is a wrapper for Libvips, an on-disk parallelized and highly optimized image processing
+                                library which operates on the principles of pipelines rather than doing manipulations in-memory.
+                                When the pipeline is connected to a destination the whole thing executes at once, improving
+                                the execution time of the program itself.">
+                </resume-line>
+                <resume-line
+                    line-text="By restructuring the image processing strategy around this paradigm I subverted two key 
+                                problems that plague any expensive set of operations; runtime and memory usage.">
+                </resume-line>
+                <resume-line
+                    line-text="As a result, my version of the script ran more than twice as fast and never approached 
+                                the memory limitations of GitHub runners.">
+                </resume-line>
             </resume-line>
             <resume-line
                 indent-depth="1"
                 line-text="Restored lost functionality by modernizing obsolete user data, re-enabling Wiki users to create custom maps">
+                <resume-line
+                    line-text="The Wiki used to enable users to program custom assemblies that would be run in their map
+                                generation scripts. This process was expensive and thus was allowed only on a limited
+                                basis. It also used an old and no-longer supported method of extracting the data
+                                from the game's cache, therefore none of these maps were updating.">
+                </resume-line>
+                <resume-line
+                    line-text="By taking the time to parse the obsolete definitions I was able to convert them into the
+                                new, modernized form. In combination with the process improvements, this meant it was now
+                                easier than ever to create custom map views.">
+                </resume-line>
             </resume-line>
         </resume-subsection>
     </resume-section>
