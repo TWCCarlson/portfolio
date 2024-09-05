@@ -9,3 +9,9 @@
     overflow: hidden;
     height: 0;
 }
+
+@media (max-width: 480px) {
+    .resume-body {
+        width: 100%;
+    }
+}

@@ -12,6 +12,7 @@
 
 
     /* Font sizes */
+    --header-name-fs: 4rem;
     --resume-section-fs: 2.2rem;
     --resume-subsection-fs: 1.8rem;
     --resume-line-fs: 1.6rem;
@@ -24,7 +25,7 @@
     --resume-line-detail-lh: 1.5em;
 
     /* Padding sizes */
-    --resume-section-pad: 0.5em 0 0 0;
+    --resume-section-pad: 0em 0 0 0;
     --resume-subsection-pad: 0 0 0 0;
     --resume-line-pad: 0.1em 0 0 0;
     --resume-line-detail-pad: 0.1em 0 0.1em 0;
@@ -56,4 +57,18 @@
     --secondary: #80c1ff;
     --secondary-background: rgba(62, 71, 108, 0.301);
     --name: hsla(180, 9%, 98%, 0.87)
+}
+
+@media (max-width: 480px) {
+    :root {
+        /* --name:  */
+        --header-name-fs: 3rem;
+        --resume-subsection-fs: 1.70rem;
+    }
+}
+
+@media (max-width: 400px) {
+    :root {
+        --resume-subsection-fs: 1.6rem;
+    }
 }

@@ -10,7 +10,7 @@
     background-color: var(--background);
     color: var(--name);
     text-align: center;
-    font-size: 4rem;
+    font-size: var(--header-name-fs);
 }
 
 .resume-header-contact-bar {

@@ -108,3 +108,34 @@
 a {
     color: var(--interactable);
 }
+
+@media (max-width: 480px) {
+    .resume-line-header {
+        flex-shrink: initial;
+        
+    }
+
+    .resume-line-text {
+        text-align: right;
+    }
+
+    .resume-line-tail {
+        text-align: right;
+    }
+
+    .resume-line-content {
+        overflow-wrap: break-word;
+        border-width: 0.5em 1em 0em 1em;
+    }
+
+    .resume-line-detail-image {
+        width: 35rem;
+    }
+
+    .iframe {
+        width: 35rem;
+        height: 20rem;
+        margin-bottom: 1em;
+        margin-top: 1em;
+    }
+}

@@ -197,7 +197,7 @@ class ResumeLineDetail extends HTMLElement {
             let regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
             let match = videoURL.match(regExp);
             if (match && match[2].length == 11) {
-                videoEmbed.innerHTML = '<iframe width="560" height="315" \
+                videoEmbed.innerHTML = '<iframe class="iframe"\
                                         src="https://www.youtube.com/embed/'
                                         + match[2] 
                                         + '" frameborder="0" allowfullscreen></iframe>';

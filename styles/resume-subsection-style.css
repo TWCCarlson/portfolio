@@ -28,3 +28,14 @@
     white-space: nowrap;
     color: var(--primary);
 }
+
+@media (max-width: 480px) {
+    .resume-subsection-left-text {
+        white-space: normal;
+    }
+
+    .resume-subsection-right-text {
+        white-space: normal;
+        text-align: right;
+    }
+}
